@@ -1,0 +1,137 @@
+//
+//  FengChatHuai.pch
+//  FengChatHuai
+//
+//  Created by iMacQIU on 16/5/19.
+//  Copyright © 2016年 iMacQIU. All rights reserved.
+//
+
+#ifndef FengChatHuai_pch
+#define FengChatHuai_pch
+
+
+#ifndef __OPTIMIZE__
+# define NSLog(...) NSLog(__VA_ARGS__)
+#else
+# define NSLog(...) {}
+#endif
+
+
+#ifdef  DEBUG
+#define debugLog(...)    NSLog(__VA_ARGS__)
+#define debugMethod()    NSLog(@"%s", __func__)
+#define debugError()     NSLog(@"Error at %s Line:%d", __func__, __LINE__)
+#else
+#define debugLog(...)
+#define debugMethod()
+#define debugError()
+#endif
+
+//#import <Cocoa/Cocoa.h>
+#import "QYHProgressHUD.h"
+#import "MBProgressHUD.h"
+#import "NSString+Additions.h"
+#import "NSDictionary+Valkidate.h"
+#import "NSDate+DDAddition.h"
+#import "UIView+DDAddition.h"
+#import "UIColor+Additions.h"
+#import "UIImage+Additions.h"
+#import "CALayer+Additions.h"
+#import "UIBarButtonItem+Additions.h"
+#import "QYHAccount.h"
+#import "UIStoryboard+WF.h"
+#import "QYHXMPPTool.h"
+#import "QYHChatDataStorage.h"
+#import "QYHXMPPvCardTemp.h"
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import<AVFoundation/AVFoundation.h>
+#import <AFNetworking/AFNetworking.h>
+#import "XMPP.h"
+
+#import "QYHQiNiuRequestManarger.h"
+#define HTTPSERVER @"你自己的文件上传地址"
+
+#define MY_DOMAIN @"127.0.0.1"
+
+
+
+//G－C－D
+#define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+#define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
+
+
+#define objectOrNull(obj) ((obj) ? (obj) : [NSNull null])
+#define objectOrEmptyStr(obj) ((obj) ? (obj) : @"")
+
+#define isNull(x)             (!x || [x isKindOfClass:[NSNull class]])
+#define toInt(x)              (isNull(x) ? 0 : [x intValue])
+#define isEmptyString(x)      (isNull(x) || [x isEqual:@""] || [x isEqual:@"(null)"])
+
+#define sleep(s);             [NSThread sleepForTimeInterval:s];
+#define Syn(x)                @synthesize x = _##x
+
+#define RGBA(r,g,b,a)         [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define RGB(r,g,b)            [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define BoldSystemFont(size)  [UIFont boldSystemFontOfSize:size]
+#define systemFont(size)      [UIFont systemFontOfSize:size]
+#define beginAutoPool         NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init]; {
+#define endAutoPool           } [pool release];
+#define skipspace(c)          while (isspace(*c)) ++c
+#define skipUntil(c,x)        while (x != *c) ++c
+#define TheWindowHeight      ([UIDevice isAfterOS7] ? [UIScreen mainScreen].bounds.size.height : ([UIScreen mainScreen].bounds.size.height - 20))
+#define IntToNumber(int)      ([NSNumber numberWithInt:int])
+#define isIOS7 [[UIDevice currentDevice].systemVersion doubleValue]>=7.0?YES:NO
+#define SYSTEM_VERSION        [[[UIDevice currentDevice] systemVersion] floatValue]
+#define STATUSBAR_HEIGHT      [[UIApplication sharedApplication] statusBarFrame].size.height
+#define NAVBAR_HEIGHT         (44.f + ((SYSTEM_VERSION >= 7) ? STATUSBAR_HEIGHT : 0))
+#define FULL_WIDTH            SCREEN_WIDTH
+#define FULL_HEIGHT           (SCREEN_HEIGHT - ((SYSTEM_VERSION >= 7) ? 0 : STATUSBAR_HEIGHT))
+#define CONTENT_HEIGHT        (FULL_HEIGHT - NAVBAR_HEIGHT)
+
+
+#define FileManager     ([NSFileManager defaultManager])
+#define TheUserDefaults ([NSUserDefaults standardUserDefaults])
+#define PhotosMessageDir ([[NSString documentPath] stringByAppendingPathComponent:@"/PhotosMessageDir/"])
+#define VoiceMessageDir ([[NSString documentPath] stringByAppendingPathComponent:@"/VoiceMessageDir/"])
+#define BlacklistDir    ([[NSString documentPath] stringByAppendingPathComponent:@"/BlacklistDir/"])
+#define WS(weakSelf)    __weak __typeof(&*self)weakSelf = self;
+
+#define SCREEN_WIDTH  ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define IPHONE4 ([[UIScreen mainScreen] bounds].size.height == 480)
+#define IS_AboveIOS7   [[[UIDevice currentDevice] systemVersion] floatValue]>=7.0?YES:NO
+#define kSystemVersion [[UIDevice currentDevice]systemVersion].floatValue
+
+
+
+#define isRespSuccess [[responseObj objectForKey:@"result"] isEqualToString:@"0"]
+
+//通知
+#define KReceiveChatMessageNotification   @"KReceiveChatMessageNotification"//接收聊天的信息
+#define KRDelayedChatMessageNotification  @"KRDelayedChatMessageNotification"//接收延时聊天的信息
+#define KReceiveAddFriendNotification     @"KReceiveAddFriendNotification"//接收添加好友的信息
+#define KContentChangeNotification        @"KContentChangeNotification"//内容发生改变的信息
+#define KNetWorkingChangeNotification     @"KNetWorkingChangeNotification"//网络发生改变的信息
+#define KLoginSuccessNotification         @"KLoginSuccessNotification"//登陆成功
+#define KReceiveNewAddFriendNotification  @"KReceiveNewAddFriendNotification"//传送到添加新朋友信息界面刷新数据
+#define KReceiveErrorConflictNotification @"KReceiveErrorConflictNotification"//账号在另外一台手机登陆
+
+#define     DEFAULT_CHAT_BACKGROUND_COLOR    WBColor(235.0, 235.0, 235.0, 1.0)
+#define     kDefaultLineGrayColor    RGBA(165.0, 165.0, 165.0, 0.5)
+
+#define kDefaultLineGray1Color  @"#BCBAC1"
+#define kDefaultRedColor        @"#DD434D"
+#define kDefaultGrayColor       @"#E5E5E5"
+//#define kDefaultBackgroundColor @"#EAEAEA"
+#define kDefaultBackgroundColor @"#EFEFF4"
+#define kTextRedColor           @"#FD5256"
+#define kDefaultPinkColor       @"#FFEEEE"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* FengChatHuai_pch */

@@ -1,0 +1,93 @@
+
+/* Class = "UILabel"; text = "电话"; ObjectID = "1h8-Hy-Le9"; */
+"1h8-Hy-Le9.text" = "电话";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2J4-pI-hOH"; */
+"2J4-pI-hOH.text" = "Label";
+
+/* Class = "UILabel"; text = "设置"; ObjectID = "4ag-OZ-3F7"; */
+"4ag-OZ-3F7.text" = "设置";
+
+/* Class = "UILabel"; text = "退出"; ObjectID = "981-kI-v6c"; */
+"981-kI-v6c.text" = "退出";
+
+/* Class = "UILabel"; text = "职位"; ObjectID = "AqU-Nd-UrG"; */
+"AqU-Nd-UrG.text" = "职位";
+
+/* Class = "UIBarButtonItem"; title = "保存"; ObjectID = "BGs-ts-qtQ"; */
+"BGs-ts-qtQ.title" = "保存";
+
+/* Class = "UILabel"; text = "FengHuai"; ObjectID = "CGD-y8-gCE"; */
+"CGD-y8-gCE.text" = "FengHuai";
+
+/* Class = "UILabel"; text = "账号"; ObjectID = "Ht7-jX-UvV"; */
+"Ht7-jX-UvV.text" = "账号";
+
+/* Class = "UILabel"; text = "勿打扰模式"; ObjectID = "ITS-fL-K4N"; */
+"ITS-fL-K4N.text" = "勿打扰模式";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "T5B-Xp-MhB"; */
+"T5B-Xp-MhB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VsY-2Y-gyw"; */
+"VsY-2Y-gyw.text" = "Label";
+
+/* Class = "UILabel"; text = "公司"; ObjectID = "XJU-rX-Vb3"; */
+"XJU-rX-Vb3.text" = "公司";
+
+/* Class = "UILabel"; text = "昵称"; ObjectID = "ZCY-ZQ-0h8"; */
+"ZCY-ZQ-0h8.text" = "昵称";
+
+/* Class = "UITableViewController"; title = "个人信息"; ObjectID = "ZHZ-Rh-sAe"; */
+"ZHZ-Rh-sAe.title" = "个人信息";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "aQ1-NY-eBW"; */
+"aQ1-NY-eBW.title" = "Item";
+
+/* Class = "UILabel"; text = "邮箱"; ObjectID = "cjh-X1-tlS"; */
+"cjh-X1-tlS.text" = "邮箱";
+
+/* Class = "UIBarButtonItem"; title = "添加"; ObjectID = "eEO-G7-lJe"; */
+"eEO-G7-lJe.title" = "添加";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ebN-5r-uNA"; */
+"ebN-5r-uNA.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fuk-cQ-Mvl"; */
+"fuk-cQ-Mvl.text" = "Label";
+
+/* Class = "UILabel"; text = "头像"; ObjectID = "mDg-4r-E3Y"; */
+"mDg-4r-E3Y.text" = "头像";
+
+/* Class = "UITableViewController"; title = "编辑信息"; ObjectID = "oHj-9H-Ytu"; */
+"oHj-9H-Ytu.title" = "编辑信息";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pIy-xR-htg"; */
+"pIy-xR-htg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rOL-ve-nEp"; */
+"rOL-ve-nEp.text" = "Label";
+
+/* Class = "UILabel"; text = "新消息提醒"; ObjectID = "rgI-I5-qCu"; */
+"rgI-I5-qCu.text" = "新消息提醒";
+
+/* Class = "UITableViewController"; title = "设置"; ObjectID = "tUL-6w-2HH"; */
+"tUL-6w-2HH.title" = "设置";
+
+/* Class = "UILabel"; text = "关于FengHuai"; ObjectID = "uWv-Qc-gcw"; */
+"uWv-Qc-gcw.text" = "关于FengHuai";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "vCm-RJ-WBa"; */
+"vCm-RJ-WBa.title" = "Item";
+
+/* Class = "UILabel"; text = "部门"; ObjectID = "wE3-ph-tFD"; */
+"wE3-ph-tFD.text" = "部门";
+
+/* Class = "UILabel"; text = "通用"; ObjectID = "wZg-Ny-Ddy"; */
+"wZg-Ny-Ddy.text" = "通用";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "xzc-k8-45F"; */
+"xzc-k8-45F.title" = "Item";
+
+/* Class = "UILabel"; text = "朋友圈"; ObjectID = "ziR-61-VKb"; */
+"ziR-61-VKb.text" = "朋友圈";
