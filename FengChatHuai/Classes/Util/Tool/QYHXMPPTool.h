@@ -17,7 +17,8 @@ typedef enum {
     XMPPResultTypeLoginSucess,//登录成功
     XMPPResultTypeLoginFailure,//登录失败
     XMPPResultTypeRegisterSucess,//注册成功
-    XMPPResultTypeRegisterFailure//注册失败
+    XMPPResultTypeRegisterFailure,//注册失败
+    XMPPResultTypeServerFailure//服务器连接
 }XMPPResultType;
 
 /**

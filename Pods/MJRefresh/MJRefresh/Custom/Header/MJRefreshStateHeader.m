@@ -32,7 +32,9 @@
 - (UILabel *)stateLabel
 {
     if (!_stateLabel) {
-//        [self addSubview:_stateLabel = [UILabel label]];
+        [self addSubview:_stateLabel = [UILabel label]];
+        //增多
+        _stateLabel.hidden = YES;
     }
     return _stateLabel;
 }
@@ -40,7 +42,9 @@
 - (UILabel *)lastUpdatedTimeLabel
 {
     if (!_lastUpdatedTimeLabel) {
-//        [self addSubview:_lastUpdatedTimeLabel = [UILabel label]];
+        [self addSubview:_lastUpdatedTimeLabel = [UILabel label]];
+        //增多
+        _lastUpdatedTimeLabel.hidden = YES;
     }
     return _lastUpdatedTimeLabel;
 }

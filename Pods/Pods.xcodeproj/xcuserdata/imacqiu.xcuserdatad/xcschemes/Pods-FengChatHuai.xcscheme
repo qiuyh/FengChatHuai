@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "942FC6AC266DC093FDB8BFB1320F1568"
+               BlueprintIdentifier = "4EABDA3FAA598FDF30B2629D4C7BDF72"
                BuildableName = "Pods_FengChatHuai.framework"
                BlueprintName = "Pods-FengChatHuai"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "942FC6AC266DC093FDB8BFB1320F1568"
+            BlueprintIdentifier = "4EABDA3FAA598FDF30B2629D4C7BDF72"
             BuildableName = "Pods_FengChatHuai.framework"
             BlueprintName = "Pods-FengChatHuai"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "942FC6AC266DC093FDB8BFB1320F1568"
-            BuildableName = "Pods_FengChatHuai.framework"
-            BlueprintName = "Pods-FengChatHuai"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

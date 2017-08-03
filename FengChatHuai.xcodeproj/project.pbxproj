@@ -469,7 +469,7 @@
 		3ACB114C1CF723160036432F /* QYHHistoryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB114B1CF723160036432F /* QYHHistoryImage.m */; };
 		3ACB114F1CF723410036432F /* QYHHistoryFrirend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB114E1CF723410036432F /* QYHHistoryFrirend.m */; };
 		3ACB11521CF723660036432F /* QYHFriendModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB11511CF723660036432F /* QYHFriendModelClass.m */; };
-		551985CB02A6CF1601644422 /* Pods_FengChatHuai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F427D0946D9E3911832966F /* Pods_FengChatHuai.framework */; };
+		6620369FA8522E67334DB494 /* Pods_FengChatHuai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406F1552DAA965B28E5EEFDD /* Pods_FengChatHuai.framework */; };
 		9C076F611D59715500D4BCC6 /* expression_custom.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C076F5F1D59715500D4BCC6 /* expression_custom.plist */; };
 		9C076F621D59715500D4BCC6 /* expressionImage_custom.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C076F601D59715500D4BCC6 /* expressionImage_custom.plist */; };
 		9C0AD4951D6BFFD000C3E9F1 /* QYHOperationMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD4941D6BFFD000C3E9F1 /* QYHOperationMenuView.m */; };
@@ -658,9 +658,10 @@
 		9C9014471D2B44A600A6BE89 /* QYHKMQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9014461D2B44A600A6BE89 /* QYHKMQRCode.m */; };
 		9C9014891D2B888900A6BE89 /* QYHSCanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9014881D2B888900A6BE89 /* QYHSCanViewController.m */; };
 		9C90148C1D2BB0C300A6BE89 /* QYHDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C90148B1D2BB0C300A6BE89 /* QYHDetailTableViewController.m */; };
+		9C9CD0991F330AF400F913C4 /* QiniuPutPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CD0981F330AF400F913C4 /* QiniuPutPolicy.m */; };
+		9C9CD0A01F331AB600F913C4 /* QYHKeyBoardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9CD09E1F331AB600F913C4 /* QYHKeyBoardManager.a */; };
 		9CBE674F1D22116D000A785E /* QYHVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBE674D1D22116D000A785E /* QYHVerificationViewController.m */; };
 		9CBE67501D22116D000A785E /* QYHVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CBE674E1D22116D000A785E /* QYHVerificationViewController.xib */; };
-		9CCDDCBA1CED9DA8004153D7 /* QYHKeyBoardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDDCB41CED9DA8004153D7 /* QYHKeyBoardManagerViewController.m */; };
 		9CCDDCBB1CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDDCB71CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m */; };
 		9CCDDCBC1CED9DA8004153D7 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDDCB91CED9DA8004153D7 /* UIView+SDAutoLayout.m */; };
 		9CEC92241D0F9D6400576272 /* QYHBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC92231D0F9D6400576272 /* QYHBackgroundView.m */; };
@@ -1233,8 +1234,8 @@
 		3ACB114E1CF723410036432F /* QYHHistoryFrirend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHHistoryFrirend.m; sourceTree = "<group>"; };
 		3ACB11501CF723660036432F /* QYHFriendModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHFriendModelClass.h; sourceTree = "<group>"; };
 		3ACB11511CF723660036432F /* QYHFriendModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHFriendModelClass.m; sourceTree = "<group>"; };
-		4F63A216E1823E5589E23575 /* Pods-FengChatHuai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengChatHuai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai.debug.xcconfig"; sourceTree = "<group>"; };
-		5F427D0946D9E3911832966F /* Pods_FengChatHuai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FengChatHuai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		406F1552DAA965B28E5EEFDD /* Pods_FengChatHuai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FengChatHuai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5E2B01A22B764CBAFC244E /* Pods-FengChatHuai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengChatHuai.release.xcconfig"; path = "Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai.release.xcconfig"; sourceTree = "<group>"; };
 		9C076F5F1D59715500D4BCC6 /* expression_custom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expression_custom.plist; sourceTree = "<group>"; };
 		9C076F601D59715500D4BCC6 /* expressionImage_custom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expressionImage_custom.plist; sourceTree = "<group>"; };
 		9C0AD4931D6BFFD000C3E9F1 /* QYHOperationMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYHOperationMenuView.h; path = FengChatHuai/Classes/Me/Controllers/QYHOperationMenuView.h; sourceTree = SOURCE_ROOT; };
@@ -1396,7 +1397,6 @@
 		9C246C811D4EE8C90068575D /* QYHXMPPvCardTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHXMPPvCardTemp.h; sourceTree = "<group>"; };
 		9C24CF411CF5A1AD00787DC0 /* QYHAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHAddTableViewController.h; sourceTree = "<group>"; };
 		9C24CF421CF5A1AD00787DC0 /* QYHAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHAddTableViewController.m; sourceTree = "<group>"; };
-		9C26FBF6482D7B05AEB76197 /* Pods-FengChatHuai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengChatHuai.release.xcconfig"; path = "Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai.release.xcconfig"; sourceTree = "<group>"; };
 		9C2907661D488B1E00224D07 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		9C2907671D488B1E00224D07 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
 		9C2907681D488B1E00224D07 /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
@@ -1487,13 +1487,15 @@
 		9C9014881D2B888900A6BE89 /* QYHSCanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHSCanViewController.m; sourceTree = "<group>"; };
 		9C90148A1D2BB0C300A6BE89 /* QYHDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHDetailTableViewController.h; sourceTree = "<group>"; };
 		9C90148B1D2BB0C300A6BE89 /* QYHDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHDetailTableViewController.m; sourceTree = "<group>"; };
+		9C9CD0971F330AF400F913C4 /* QiniuPutPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuPutPolicy.h; sourceTree = "<group>"; };
+		9C9CD0981F330AF400F913C4 /* QiniuPutPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuPutPolicy.m; sourceTree = "<group>"; };
+		9C9CD09E1F331AB600F913C4 /* QYHKeyBoardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = QYHKeyBoardManager.a; sourceTree = "<group>"; };
+		9C9CD09F1F331AB600F913C4 /* QYHKeyBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHKeyBoardManager.h; sourceTree = "<group>"; };
 		9CABBEE11D51D0A30017F6DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CABBEE91D51D2FF0017F6DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9CBE674C1D22116D000A785E /* QYHVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHVerificationViewController.h; sourceTree = "<group>"; };
 		9CBE674D1D22116D000A785E /* QYHVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHVerificationViewController.m; sourceTree = "<group>"; };
 		9CBE674E1D22116D000A785E /* QYHVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYHVerificationViewController.xib; sourceTree = "<group>"; };
-		9CCDDCB31CED9DA8004153D7 /* QYHKeyBoardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHKeyBoardManagerViewController.h; sourceTree = "<group>"; };
-		9CCDDCB41CED9DA8004153D7 /* QYHKeyBoardManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHKeyBoardManagerViewController.m; sourceTree = "<group>"; };
 		9CCDDCB61CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
 		9CCDDCB71CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		9CCDDCB81CED9DA8004153D7 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
@@ -1533,6 +1535,7 @@
 		9CFA571B1CF3E74B00DB8F39 /* QYHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHAccount.m; sourceTree = "<group>"; };
 		9CFA571D1CF3F1CB00DB8F39 /* UIStoryboard+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+WF.h"; sourceTree = "<group>"; };
 		9CFA571E1CF3F1CB00DB8F39 /* UIStoryboard+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+WF.m"; sourceTree = "<group>"; };
+		B7940B0D64698944F2644CD3 /* Pods-FengChatHuai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengChatHuai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1549,7 +1552,8 @@
 				9C402C531D250EA20000B7EB /* SMS_SDK.framework in Frameworks */,
 				9C2F90431D262C5C0051336F /* MOBFoundation.framework in Frameworks */,
 				9C18631A1D0D31EE00E3C7D2 /* libsqlite3.tbd in Frameworks */,
-				551985CB02A6CF1601644422 /* Pods_FengChatHuai.framework in Frameworks */,
+				6620369FA8522E67334DB494 /* Pods_FengChatHuai.framework in Frameworks */,
+				9C9CD0A01F331AB600F913C4 /* QYHKeyBoardManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2347,9 +2351,18 @@
 				9C402C561D250EDF0000B7EB /* libicucore.tbd */,
 				9C402C541D250ECB0000B7EB /* libz.tbd */,
 				9C1863191D0D31EE00E3C7D2 /* libsqlite3.tbd */,
-				5F427D0946D9E3911832966F /* Pods_FengChatHuai.framework */,
+				406F1552DAA965B28E5EEFDD /* Pods_FengChatHuai.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		625832CF568FD0EB49136044 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7940B0D64698944F2644CD3 /* Pods-FengChatHuai.debug.xcconfig */,
+				7C5E2B01A22B764CBAFC244E /* Pods-FengChatHuai.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9C1311E21CF82B4200788672 /* Resources */ = {
@@ -2572,8 +2585,8 @@
 				9C70DAB81CED691C003ADB63 /* FengChatHuaiTests */,
 				9C70DAC31CED691C003ADB63 /* FengChatHuaiUITests */,
 				9C70DA9D1CED691C003ADB63 /* Products */,
-				C1930E894E2EB02ED41E83A9 /* Pods */,
 				4215E20805F6A1AC416ED04B /* Frameworks */,
+				625832CF568FD0EB49136044 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2790,6 +2803,8 @@
 		9C70DAE81CED6F00003ADB63 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				9C9CD0971F330AF400F913C4 /* QiniuPutPolicy.h */,
+				9C9CD0981F330AF400F913C4 /* QiniuPutPolicy.m */,
 				9C47F4C21D5873180086505A /* MLEmojiLabel */,
 				9C2907641D488B1E00224D07 /* MJExtension */,
 				9C402C4F1D250EA20000B7EB /* SMS_SDK */,
@@ -2821,8 +2836,8 @@
 		9CCDDCB21CED9DA8004153D7 /* QYHKeyBoard */ = {
 			isa = PBXGroup;
 			children = (
-				9CCDDCB31CED9DA8004153D7 /* QYHKeyBoardManagerViewController.h */,
-				9CCDDCB41CED9DA8004153D7 /* QYHKeyBoardManagerViewController.m */,
+				9C9CD09E1F331AB600F913C4 /* QYHKeyBoardManager.a */,
+				9C9CD09F1F331AB600F913C4 /* QYHKeyBoardManager.h */,
 			);
 			path = QYHKeyBoard;
 			sourceTree = "<group>";
@@ -2838,15 +2853,6 @@
 			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
-		C1930E894E2EB02ED41E83A9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4F63A216E1823E5589E23575 /* Pods-FengChatHuai.debug.xcconfig */,
-				9C26FBF6482D7B05AEB76197 /* Pods-FengChatHuai.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2854,13 +2860,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C70DAC91CED691C003ADB63 /* Build configuration list for PBXNativeTarget "FengChatHuai" */;
 			buildPhases = (
-				810D9F42DE0990658DE4D0F2 /* 📦 Check Pods Manifest.lock */,
+				F5D3121BAEECB372957CEEDC /* [CP] Check Pods Manifest.lock */,
 				9C70DA981CED691C003ADB63 /* Sources */,
 				9C70DA991CED691C003ADB63 /* Frameworks */,
 				9C70DA9A1CED691C003ADB63 /* Resources */,
-				B3A71E3B49E642AB8A19F00C /* 📦 Embed Pods Frameworks */,
-				3667A5061CB492EE928F9203 /* 📦 Copy Pods Resources */,
-				31795C90AF6D9A25BB49A202 /* Embed Pods Frameworks */,
+				93002529D6DF71AA8F74E12B /* [CP] Embed Pods Frameworks */,
+				2C87A3BD6CA23F086A70792F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2919,7 +2924,8 @@
 				TargetAttributes = {
 					9C70DA9B1CED691C003ADB63 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = RHWWUSZQV3;
+						DevelopmentTeam = 9A8N83872W;
+						ProvisioningStyle = Automatic;
 					};
 					9C70DAB41CED691C003ADB63 = {
 						CreatedOnToolsVersion = 7.3;
@@ -3499,29 +3505,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31795C90AF6D9A25BB49A202 /* Embed Pods Frameworks */ = {
+		2C87A3BD6CA23F086A70792F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3667A5061CB492EE928F9203 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3529,34 +3520,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		810D9F42DE0990658DE4D0F2 /* 📦 Check Pods Manifest.lock */ = {
+		93002529D6DF71AA8F74E12B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B3A71E3B49E642AB8A19F00C /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FengChatHuai/Pods-FengChatHuai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5D3121BAEECB372957CEEDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3638,7 +3629,6 @@
 				9C1863151D0D098A00E3C7D2 /* QYHFMDBmanager.m in Sources */,
 				9C3683C31D6A94D300D86AA0 /* QYHDiscoverHeight.m in Sources */,
 				3A4C62A71D03C83100074DB8 /* MWPhoto.m in Sources */,
-				9CCDDCBA1CED9DA8004153D7 /* QYHKeyBoardManagerViewController.m in Sources */,
 				3ACB114C1CF723160036432F /* QYHHistoryImage.m in Sources */,
 				3A261A6D1CF7184100A86360 /* QYHRegisterViewController.m in Sources */,
 				9C9014471D2B44A600A6BE89 /* QYHKMQRCode.m in Sources */,
@@ -3680,6 +3670,7 @@
 				3A4C62B81D03C83100074DB8 /* UIViewController+DNImagePicker.m in Sources */,
 				3A3265901D3534F4002F2347 /* QYHNewFriendViewController.m in Sources */,
 				3A4C62D01D03C83100074DB8 /* PSTGridLayoutSection.m in Sources */,
+				9C9CD0991F330AF400F913C4 /* QiniuPutPolicy.m in Sources */,
 				3A4C62B41D03C83100074DB8 /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
 				3A261A6C1CF7184100A86360 /* QYHLoginViewController.m in Sources */,
 				3A4C62B61D03C83100074DB8 /* UIImage+AssetImage.m in Sources */,
@@ -3858,12 +3849,13 @@
 		};
 		9C70DACA1CED691C003ADB63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F63A216E1823E5589E23575 /* Pods-FengChatHuai.debug.xcconfig */;
+			baseConfigurationReference = B7940B0D64698944F2644CD3 /* Pods-FengChatHuai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiahong Huang (QVTCZ7A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9A8N83872W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FengChatHuai/Others/SMS_SDK",
@@ -3874,9 +3866,14 @@
 				INFOPLIST_FILE = FengChatHuai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FengChatHuai/Others/QYHKeyBoard",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.huai.FengChatHuai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "af8ae062-d5e6-43fc-b11b-841f95359c8e";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm7s arm64";
 			};
@@ -3884,12 +3881,13 @@
 		};
 		9C70DACB1CED691C003ADB63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C26FBF6482D7B05AEB76197 /* Pods-FengChatHuai.release.xcconfig */;
+			baseConfigurationReference = 7C5E2B01A22B764CBAFC244E /* Pods-FengChatHuai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiahong Huang (QVTCZ7A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9A8N83872W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FengChatHuai/Others/SMS_SDK",
@@ -3900,9 +3898,14 @@
 				INFOPLIST_FILE = FengChatHuai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FengChatHuai/Others/QYHKeyBoard",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.huai.FengChatHuai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "af8ae062-d5e6-43fc-b11b-841f95359c8e";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 arm7s arm64";
 			};

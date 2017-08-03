@@ -7,7 +7,7 @@
 //
 
 #import "QYHAddTableViewController.h"
-#import "QYHKeyBoardManagerViewController.h"
+#import "QYHKeyBoardManager.h"
 #import "QYHVerificationViewController.h"
 #import "QYHDetailTableViewController.h"
 #import "XMPPvCardTemp.h"
@@ -22,11 +22,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   [QYHKeyBoardManagerViewController shareInstance].selfView = self.view;
 
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor greenColor];
     self.title = @"添加好友";
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = self.view;
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = nil;
 }
 
 

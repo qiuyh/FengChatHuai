@@ -305,6 +305,11 @@ singleton_implementation(QYHXMPPTool)
     
     [QYHAccount shareAccount].isLogout = NO;
     
+//    if (_resultBlock) {
+//        _resultBlock(XMPPResultTypeServerFailure);
+//        _resultBlock = nil;
+//    }
+    
     NSLog(@"与服务器断开连接%@",error);
 }
 #pragma mark 登录成功
@@ -355,6 +360,7 @@ singleton_implementation(QYHXMPPTool)
     //回调resultBlock
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeLoginFailure);
+        _resultBlock = nil;
     }
 }
 
@@ -367,6 +373,7 @@ singleton_implementation(QYHXMPPTool)
     
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeRegisterSucess);
+        _resultBlock = nil;
     }
 }
 
@@ -375,6 +382,7 @@ singleton_implementation(QYHXMPPTool)
     NSLog(@"注册失败 %@",error);
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeRegisterFailure);
+        _resultBlock = nil;
     }
     
 }

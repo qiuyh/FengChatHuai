@@ -553,6 +553,9 @@ static QYHDiscoverViewController * discoverVC = nil;
         });
     }];
     
+//    [self.myTableView.mj_header setValue:nil forKey:@"_arrowView"];
+//    [self.myTableView.mj_header setValue:nil forKey:@"_loadingView"];
+    
     // 马上进入刷新状态
     [self.myTableView.mj_header beginRefreshing];
     

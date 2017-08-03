@@ -12,15 +12,15 @@
 #define kXMPPPwdKey @"xmppPwd"
 #define kLoginKey @"login"
 
-static NSString *domain = @"qiuyonghuai.local";//qiuyonghuai.local
-static NSString *host = @"192.168.1.101";//本地网络192.168.1.102
+//static NSString *domain = @"qiuyonghuai.local";//qiuyonghuai.local
+//static NSString *host = @"192.168.1.101";//本地网络192.168.1.102
 
-//static NSString *domain = @"cluster.openfire";
-//static NSString *host = @"114.215.94.79";//本地网络
+static NSString *domain = @"cluster.openfire";
+static NSString *host = @"tt.hori-gz.com";//本地网络
 
 //
 //static NSString *domain = @"imacqiu.local";//qiuyonghuai.local
-//static NSString *host = @"192.168.0.181";//本地网络192.168.1.102
+//static NSString *host = @"192.168.51.93";//本地网络192.168.51.93
 ////@"127.0.0.1";
 static int port = 5222;
 

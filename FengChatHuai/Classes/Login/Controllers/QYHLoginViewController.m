@@ -7,7 +7,7 @@
 //
 
 #import "QYHLoginViewController.h"
-#import "QYHKeyBoardManagerViewController.h"
+#import "QYHKeyBoardManager.h"
 #import "QYHGetCodeViewController.h"
 #import "QYHXMPPTool.h"
 #import "QYHFMDBmanager.h"
@@ -32,10 +32,46 @@
    
 }
 
-- (void)viewDidAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    [QYHKeyBoardManager shareInstance].selfView = self.view;
+    
     [QYHAccount shareAccount].isLogout = NO;
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = nil;
+}
+
+- (IBAction)setting:(id)sender {
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"设 置" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+    }];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+      
+    }];
+    
+    
+    [alertVC addAction:cancelAction];
+    [alertVC addAction:okAction];
+    
+    [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"domain";
+    }];
+    
+    [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"host";
+    }];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -54,7 +90,6 @@
         self.headImageView.image = [UIImage imageWithContentsOfFile:path] ? [UIImage imageWithContentsOfFile:path] : [UIImage imageNamed:@"placeholder"];
     }
     
-    [QYHKeyBoardManagerViewController shareInstance].selfView = self.view;
 }
 
 - (IBAction)loginAction:(id)sender {
@@ -338,7 +373,12 @@
             
         }else{
             NSLog(@"%s 登录失败",__func__);
-            [QYHProgressHUD showErrorHUD:nil message:@"用户名或者密码不正确"];
+            
+            if (resultType == XMPPResultTypeServerFailure) {
+                [QYHProgressHUD showErrorHUD:nil message:@"服务器连接失败！"];
+            }else{
+                [QYHProgressHUD showErrorHUD:nil message:@"用户名或者密码不正确"];
+            }
         }
     });
     

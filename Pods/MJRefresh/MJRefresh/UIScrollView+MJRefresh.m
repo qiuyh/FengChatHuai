@@ -32,10 +32,7 @@
 static const char MJRefreshHeaderKey = '\0';
 - (void)setMj_header:(MJRefreshHeader *)mj_header
 {
-    if (!mj_header) {
-         [self.mj_header removeFromSuperview];
-        
-    }else if (mj_header != self.mj_header) {
+    if (mj_header != self.mj_header) {
         // 删除旧的，添加新的
         [self.mj_header removeFromSuperview];
         [self insertSubview:mj_header atIndex:0];

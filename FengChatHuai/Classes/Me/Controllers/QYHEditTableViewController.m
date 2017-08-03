@@ -7,7 +7,7 @@
 //
 
 #import "QYHEditTableViewController.h"
-#import "QYHKeyBoardManagerViewController.h"
+#import "QYHKeyBoardManager.h"
 #import <CoreImage/CoreImage.h>
 #import "UIImage+Additions.h"
 #import "QYHKMQRCode.h"
@@ -30,10 +30,22 @@
 
 @implementation QYHEditTableViewController
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = self.view;
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [QYHKeyBoardManagerViewController shareInstance].selfView = self.view;
     
     //设置标题
     self.title = self.cell.textLabel.text;

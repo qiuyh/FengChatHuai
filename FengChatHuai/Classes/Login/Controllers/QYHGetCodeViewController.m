@@ -9,7 +9,7 @@
 #import "QYHGetCodeViewController.h"
 #import "QYHRegisterViewController.h"
 #import <SMS_SDK/SMSSDK.h>
-#import "QYHKeyBoardManagerViewController.h"
+#import "QYHKeyBoardManager.h"
 
 @interface QYHGetCodeViewController ()
 {
@@ -26,10 +26,19 @@
 
 @implementation QYHGetCodeViewController
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [QYHKeyBoardManagerViewController shareInstance].selfView = self.view;
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = self.view;
 }
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = nil;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

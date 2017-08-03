@@ -7,7 +7,7 @@
 //
 
 #import "QYHRegisterViewController.h"
-#import "QYHKeyBoardManagerViewController.h"
+#import "QYHKeyBoardManager.h"
 
 @interface QYHRegisterViewController ()
 
@@ -23,10 +23,19 @@
 
 @implementation QYHRegisterViewController
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [QYHKeyBoardManagerViewController shareInstance].selfView = self.view;
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = self.view;
 }
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [QYHKeyBoardManager shareInstance].selfView = nil;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

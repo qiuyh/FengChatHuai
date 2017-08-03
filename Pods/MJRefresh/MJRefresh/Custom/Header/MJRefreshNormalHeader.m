@@ -114,11 +114,6 @@
         self.loadingView.alpha = 1.0; // 防止refreshing -> idle的动画完毕动作没有被执行
         [self.loadingView startAnimating];
         self.arrowView.hidden = YES;
-    }else if (state == MJRefreshStateNoMoreData ) {
-
-        [self.loadingView stopAnimating];
-       
     }
-
 }
 @end

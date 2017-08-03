@@ -141,12 +141,6 @@
 }
 
 #pragma mark - 公共方法
-
-- (void)endRefreshingWithNoMoreData
-{
-    self.state = MJRefreshStateNoMoreData;
-}
-
 - (void)endRefreshing
 {
     if ([self.scrollView isKindOfClass:[UICollectionView class]]) {

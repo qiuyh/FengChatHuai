@@ -6,7 +6,7 @@
 //  Copyright © 2016年 iMacQIU. All rights reserved.
 //
 
-#import <MGSwipeTableCell/MGSwipeTableCell.h>
+#import "MGSwipeTableCell/MGSwipeTableCell.h"
 
 @interface QYHContactsCell : MGSwipeTableCell
 

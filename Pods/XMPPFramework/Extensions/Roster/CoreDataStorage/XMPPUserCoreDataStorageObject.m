@@ -264,9 +264,6 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_WARN;
 
 - (void)updateWithItem:(NSXMLElement *)item
 {
-    
-//    item==<item xmlns="jabber:iq:roster" jid="??@imacqiu.local" name="??" ask="subscribe" subscription="none"/>
-//    
 	NSString *jidStr = [item attributeStringValueForName:@"jid"];
 	XMPPJID *jid = [XMPPJID jidWithString:jidStr];
 	
