@@ -14,7 +14,8 @@ typedef enum : NSUInteger {
     SendImage,
     SendVoice,
     SendNewCircle,
-    SendAddFriend
+    SendAddFriend,
+    SendDeleteFrien
     
 } MySendContentType;
 

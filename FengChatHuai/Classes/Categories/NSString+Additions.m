@@ -382,6 +382,31 @@
                                           attributes:attribute
                                              context:nil];
     
+//    if (kSystemVersion>=10.0) {
+//        
+//        CGFloat spaceWith = 0;
+//        
+//        if(textContent){
+//            for (int i=0; i<textContent.length; i++) {
+//                NSRange range=NSMakeRange(i,1);
+//                NSString *subString=[textContent substringWithRange:range];
+//                if ([subString isEqualToString:@""]) {
+//                    continue;
+//                }
+//                const char *cString=[subString UTF8String];
+//                if (!cString) {
+//                    continue;
+//                }
+//                if (strlen(cString)==3)
+//                {
+//                    spaceWith += 0.5;
+//                }
+//            }
+//        }
+//        
+//        aRect.size.width += spaceWith;
+//    }
+
     return aRect.size;
 }
 

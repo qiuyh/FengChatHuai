@@ -144,11 +144,11 @@
     UIView *spaceView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 35)];
     spaceView.backgroundColor = [UIColor colorWithHexString:@"EFEFF4"];
     
-    UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(spaceView.frame), SCREEN_WIDTH, 1)];
+    UIView *lineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(spaceView.frame), SCREEN_WIDTH, 0.35)];
     lineView1.backgroundColor = [UIColor colorWithHexString:@"DADADA"];
 
     
-    UIView *lineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(hearView.frame)-1, SCREEN_WIDTH, 1)];
+    UIView *lineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(hearView.frame)-0.35, SCREEN_WIDTH, 0.35)];
     lineView2.backgroundColor = [UIColor colorWithHexString:@"DADADA"];
 
     [hearView addSubview:spaceView];
@@ -167,7 +167,7 @@
         nameLabel.text = nameArray[i];
         nameLabel.centerY = imgView.centerY;
         
-        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(18, CGRectGetMaxY(imgView.frame)+10, SCREEN_WIDTH, 1)];
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(18, CGRectGetMaxY(imgView.frame)+10, SCREEN_WIDTH, 0.35)];
         lineView.backgroundColor = [UIColor colorWithHexString:@"DADADA"];
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -182,7 +182,10 @@
         [hearView addSubview:button];
         [hearView addSubview:imgView];
         [hearView addSubview:nameLabel];
-        [hearView addSubview:lineView];
+        
+        if (i < 2) {
+            [hearView addSubview:lineView];
+        }
         
     }
     
@@ -391,7 +394,7 @@
                             
                             if (result) {
                                 
-                                
+                                [self sendDeleteMessage:_deletUser.jid];
                                 //删除好友
                                 [[QYHXMPPTool sharedQYHXMPPTool].roster removeUser:_deletUser.jid];
                                 
@@ -470,6 +473,30 @@
         
     }
     
+}
+
+
+//发送信息
+- (void)sendDeleteMessage:(XMPPJID *)jid
+{
+    NSDictionary *bodyDic = @{@"type":@(SendDeleteFrien)};
+    //把bodyDic转换成data类型
+    NSError *error = nil;
+    
+    NSData *bodyData = [NSJSONSerialization dataWithJSONObject:bodyDic options:NSJSONWritingPrettyPrinted error:&error];
+    if (error)
+    {
+        NSLog(@"解析错误%@", [error localizedDescription]);
+    }
+    
+    //把data转成字符串进行发送
+    NSString *bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
+    
+    //发聊天数据
+    XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:jid];
+    [msg addBody:bodyString];
+    
+    [[QYHXMPPTool sharedQYHXMPPTool].xmppStream sendElement:msg];
 }
 
 

@@ -7,20 +7,23 @@
 //
 
 #import "QYHAccount.h"
-#define kUserKey @"user"
-#define kPwdKey @"pwd"
+
+#define kUserKey    @"user"
+#define kPwdKey     @"pwd"
 #define kXMPPPwdKey @"xmppPwd"
-#define kLoginKey @"login"
+#define kLoginKey   @"login"
+#define kDomainKey  @"kDomainKey"
+#define kHostKey    @"kHostKey"
 
 //static NSString *domain = @"qiuyonghuai.local";//qiuyonghuai.local
 //static NSString *host = @"192.168.1.101";//本地网络192.168.1.102
 
-static NSString *domain = @"cluster.openfire";
-static NSString *host = @"tt.hori-gz.com";//本地网络
+//static NSString *domain = @"cluster.openfire";
+//static NSString *host = @"114.215.94";//本地网络
 
 //
-//static NSString *domain = @"imacqiu.local";//qiuyonghuai.local
-//static NSString *host = @"192.168.51.93";//本地网络192.168.51.93
+static NSString *domain = @"imacqiu.local";//qiuyonghuai.local
+static NSString *host = @"192.168.51.93";//本地网络192.168.51.93
 ////@"127.0.0.1";
 static int port = 5222;
 
@@ -72,12 +75,36 @@ static int port = 5222;
 }
 
 
+-(void)saveDomain:(NSString *)domain host:(NSString *)host{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:domain forKey:kDomainKey];
+    [defaults setObject:host forKey:kHostKey];
+    [defaults synchronize];
+}
+
+
 -(NSString *)domain{
-    return domain;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *dm = [defaults objectForKey:kDomainKey];
+    
+    if (!dm) {
+        dm = domain;
+    }
+    
+    return dm;
 }
 
 -(NSString *)host{
-    return host;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *ht = [defaults objectForKey:kHostKey];
+    
+    if (!ht) {
+        ht = host;
+    }
+
+    return ht;
 }
 
 -(int)port{

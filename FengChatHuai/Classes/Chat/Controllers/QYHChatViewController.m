@@ -47,6 +47,11 @@
 
 @property(nonatomic,strong) QYHChatMssegeModel *model;
 
+@property (nonatomic,assign) NSInteger needRefreshCount;//
+
+@property (nonatomic,assign) NSInteger changeContentCount;
+
+
 @end
 
 @implementation QYHChatViewController
@@ -136,7 +141,9 @@
     
     NSLog(@"QYHChatViewController--viewDidLoad");
     
-     self.myTableView.rowHeight = 60.0f;
+    self.myTableView.rowHeight = 60.0f;
+    self.needRefreshCount = 0;
+    self.changeContentCount = 0;
     
     if (self.isTrans) {
         self.myTableView.tableHeaderView = [self loadHearView];
@@ -224,26 +231,29 @@
         
     }else{
         
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSInteger count = 0;
-            while (!_resultsContr.fetchedObjects.count) {
-                
-                count ++;
-                if (count==10000) {
-                    break;
-                }
-            }
-            
-            NSLog(@"count=======%lu",count);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self ChangeContent];
-                
-            });
-            
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self ChangeContent];
         });
-        
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            NSInteger count = 0;
+//            while (!_resultsContr.fetchedObjects.count) {
+//                
+//                count ++;
+//                if (count==10000) {
+//                    break;
+//                }
+//            }
+//            
+//            NSLog(@"count=======%lu",count);
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                
+//                [self ChangeContent];
+//                
+//            });
+//            
+//        });
+//        
     }
 
 }
@@ -412,70 +422,86 @@
 //获取全部的聊天信息
 - (void)getAllChatMessage
 {
-    
-     [QYHChatDataStorage shareInstance].usersArray   = [self.usersArray mutableCopy];
-    
     /**
-     *  传到联系人界面刷新数据
+     *防止刷新太快
+     *
      */
-    [[NSNotificationCenter defaultCenter]postNotificationName:KContentChangeNotification object:nil];
     
-    [self queryAllUnread];
+    self.needRefreshCount++;
     
-    NSLog(@"getAllChatMessage");
-    
-    
-    __weak __typeof(self) weakSelf = self;
-    [[QYHFMDBmanager shareInstance] queryAllMessegeByUserArray:_usersArray completion:^(NSArray *addFriendArray, NSArray *messagesArray) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.needRefreshCount * 0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [weakSelf.addFriendArray removeAllObjects];
-        [weakSelf.msgDataArray removeAllObjects];
+        [QYHChatDataStorage shareInstance].usersArray = [self.usersArray mutableCopy];
         
         /**
-         *  获取新朋友信息
+         *  传到联系人界面刷新数据
          */
-        if (!self.isTrans) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:KContentChangeNotification object:nil];
+        
+        
+        
+        [self queryAllUnread];
+        
+        NSLog(@"getAllChatMessage");
+        
+        
+        __weak __typeof(self) weakSelf = self;
+        [[QYHFMDBmanager shareInstance] queryAllMessegeByUserArray:_usersArray completion:^(NSArray *addFriendArray, NSArray *messagesArray) {
             
-            NSMutableArray *array = [addFriendArray mutableCopy];
+            [weakSelf.addFriendArray removeAllObjects];
+            [weakSelf.msgDataArray removeAllObjects];
             
-            if (addFriendArray.count){
-                weakSelf.addFriendArray = array;
-                NSLog(@"addFriendArray==%@",array);
-                [weakSelf.msgDataArray addObject:weakSelf.addFriendArray];
+            /**
+             *  获取新朋友信息
+             */
+            if (!self.isTrans) {
                 
-            }else{
+                NSMutableArray *array = [addFriendArray mutableCopy];
                 
-                NSLog(@"getAllChatMessage11-获取消息失败");
-            }
-        }
-        
-        //        NSLog(@"weakSelf.msgDataArray111==%@",weakSelf.msgDataArray);
-        
-        /**
-         *  获取聊天信息记录
-         */
-        NSMutableArray *array1 = [messagesArray mutableCopy];
-        
-        if (messagesArray.count) {
-            
-            for (NSArray *arr in array1) {
-                if (arr.count) {
-                    [weakSelf.msgDataArray addObject:arr];
+                if (addFriendArray.count){
+                    weakSelf.addFriendArray = array;
+                    NSLog(@"addFriendArray==%@",array);
+                    [weakSelf.msgDataArray addObject:weakSelf.addFriendArray];
+                    
+                }else{
+                    
+                    NSLog(@"getAllChatMessage11-获取消息失败");
                 }
             }
             
-        }else{
+            //        NSLog(@"weakSelf.msgDataArray111==%@",weakSelf.msgDataArray);
             
-            NSLog(@"getAllChatMessage22-获取消息失败");
-        }
+            /**
+             *  获取聊天信息记录
+             */
+            NSMutableArray *array1 = [messagesArray mutableCopy];
+            
+            if (messagesArray.count) {
+                
+                for (NSArray *arr in array1) {
+                    if (arr.count) {
+                        [weakSelf.msgDataArray addObject:arr];
+                    }
+                }
+                
+            }else{
+                
+                NSLog(@"getAllChatMessage22-获取消息失败");
+            }
+            
+            
+            //         NSLog(@"weakSelf.msgDataArray11122==%@",weakSelf.msgDataArray);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf sortTimeByDes];
+                
+                self.needRefreshCount = 0;
+            });
+        }];
         
-        
-//         NSLog(@"weakSelf.msgDataArray11122==%@",weakSelf.msgDataArray);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf sortTimeByDes];
-        });
-    }];
+    });
+    
+
     
 //    /**
 //     *  获取新朋友信息
@@ -669,9 +695,18 @@
 #pragma mark -数据库内容改变
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
     
-    NSLog(@"currentThread%@",[NSThread currentThread]);
+    NSLog(@"currentThread==%@,controller==%@",[NSThread currentThread],controller);
     
-    [self getContentUser];
+    
+    _changeContentCount++;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_changeContentCount * 0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self getContentUser];
+        
+        _changeContentCount = 0;
+        
+    });
+    
 }
 
 
@@ -872,7 +907,17 @@
                     contentSting = @"请求添加为好友";
                     break;
             }
+            
             cell.detailLabel1.text = [NSString stringWithFormat:@"%@ %@",vCard.nickname?[vCard.nickname stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]:model.fromUserID,contentSting];
+            
+            for (QYHContactModel *user in _usersArray) {
+                if ([user.jid.user isEqualToString:[model.fromUserID isEqualToString:[QYHAccount shareAccount].loginUser]?model.toUserID:model.fromUserID]) {
+                    
+                    cell.detailLabel1.text = [NSString stringWithFormat:@"%@ %@",user.nickname ? [user.nickname stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]:user.vCard.nickname ? [user.vCard.nickname stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]: [user.displayName stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding],contentSting];
+                    
+                    break;
+                }
+            }
             
             //获取未读的信息条数
             __weak __typeof(cell) weakCell = cell;
@@ -982,6 +1027,7 @@
                     }];
                 }
                 
+                break;
             }
         }
     }

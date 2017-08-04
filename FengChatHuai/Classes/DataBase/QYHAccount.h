@@ -76,6 +76,12 @@
 -(void)saveToSandBox;
 
 /**
+ *  保存最新的服务器配置
+ */
+-(void)saveDomain:(NSString *)domain host:(NSString *)host;
+
+
+/**
  *  服务器的域名
  */
 @property(nonatomic,copy,readonly)NSString *domain;

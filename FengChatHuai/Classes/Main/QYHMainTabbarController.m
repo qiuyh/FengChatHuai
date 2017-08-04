@@ -107,9 +107,19 @@
     [QYHAccount shareAccount].login = NO;
     [[QYHAccount shareAccount] saveToSandBox];
     
-    //回登录的控制器
-    [UIStoryboard showInitialVCWithName:@"Login"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //回登录的控制器
+        [UIStoryboard showInitialVCWithName:@"Login"];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示"
+                                                            message:@"您的账号已在其它手机登录"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确认"
+                                                  otherButtonTitles:nil];
+        [alertView show];
 
+    });
+   
 }
 
 - (void)netWorkingChange:(NSNotification *)noti{

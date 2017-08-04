@@ -322,6 +322,8 @@
     
     [self.basae inDatabase:^(FMDatabase *db) {
         
+        [db executeUpdate:[NSString stringWithFormat:@"delete from AddFriend%@Mssege where fromUserID = ?",[QYHAccount shareAccount].loginUser],messege.fromUserID];
+        
         if ([db executeUpdate:[NSString stringWithFormat:@"insert into AddFriend%@Mssege (messegeID,fromUserID,toUserID,type,status,content,time,isRead) values (?,?,?,?,?,?,?,?)",[QYHAccount shareAccount].loginUser],messege.messegeID,messege.fromUserID,messege.toUserID,@(messege.type),@(messege.addStatus),messege.content,messege.time,@(messege.isRead)])
         {
             dispatch_async(dispatch_get_main_queue(), ^{

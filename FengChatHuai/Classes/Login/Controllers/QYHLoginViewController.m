@@ -57,6 +57,15 @@
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
       
+        NSString *domain = alertVC.textFields.firstObject.text;
+        NSString *host   = alertVC.textFields.lastObject.text;
+        
+        if (!domain || !host || domain.length < 2 || host.length < 2) {
+            return ;
+        }
+        
+        [[QYHAccount shareAccount] saveDomain:domain host:host];
+        
     }];
     
     
@@ -65,10 +74,12 @@
     
     [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"domain";
+        textField.text = [QYHAccount shareAccount].domain;
     }];
     
     [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"host";
+        textField.text = [QYHAccount shareAccount].host;
     }];
     
     [self presentViewController:alertVC animated:YES completion:nil];
@@ -106,11 +117,15 @@
         return;
     }
     
-    
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    
-//    [self loginXMPP:self.passwordTextField.text];
-//    return;
+    if ([self.accountTextField.text isEqualToString:@"lisi"] ||
+        [self.accountTextField.text isEqualToString:@"zhangsan"] ||
+        [self.accountTextField.text isEqualToString:@"huai"]) {
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self loginXMPP:self.passwordTextField.text];
+        return;
+    }
+   
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     

@@ -194,13 +194,15 @@ singleton_implementation(QYHXMPPTool)
      }else{
      //设置登录JID
      }*/
+    //要添加resource，要不然互相踢不了
+    
     QYHAccount *account = [QYHAccount shareAccount];
     if (self.isRegisterOperation) {//注册
         NSString *registerUser = account.registerUser;
-        myJid = [XMPPJID jidWithUser:registerUser domain:account.domain resource:nil];
+        myJid = [XMPPJID jidWithUser:registerUser domain:account.domain resource:@"qyh"];
     }else{//登录操作
         NSString *loginUser = [QYHAccount shareAccount].loginUser;
-        myJid = [XMPPJID jidWithUser:loginUser domain:account.domain resource:nil];
+        myJid = [XMPPJID jidWithUser:loginUser domain:account.domain resource:@"qyh"];
     }
   
     _xmppStream.myJID = myJid;
@@ -422,6 +424,9 @@ singleton_implementation(QYHXMPPTool)
 
 #pragma mark 用户注销
 -(void)xmppLogout{
+    
+    [QYHAccount shareAccount].isLogout = NO;
+    
     // 1.发送 "离线消息" 给服务器
     [self sendOffline];
     // 2.断开与服务器的连接
@@ -453,43 +458,13 @@ singleton_implementation(QYHXMPPTool)
     //    NSString *userId = [NSString stringWithFormat:@"%@", [[sender myJID] user]];
     //在线用户
     NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
-    NSLog(@"presenceType:%@",presenceType);
+    NSLog(@"didReceivePresence_presenceType:%@",presenceType);
     NSLog(@"用户:%@",presenceFromUser);
     
     
-    if ([presenceType isEqualToString:@"available"]) {
-        
-        if ([presenceFromUser isEqualToString:[QYHAccount shareAccount].loginUser]) {
-            
-            _count ++;
-            
-            if (_count == 2) {
-                _count = 0;
-                
-                if ([QYHAccount shareAccount].isLogout) {
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [[NSNotificationCenter defaultCenter]postNotificationName:KReceiveErrorConflictNotification object:nil];
-                        
-                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示"
-                                                                            message:@"您的账号已在其它手机登录"
-                                                                           delegate:nil
-                                                                  cancelButtonTitle:@"确认"
-                                                                  otherButtonTitles:nil];
-                        [alertView show];
-                        
-                    });
-                    
-                }
-            }
-        }
-    }
-    
-    
     //收到对方定阅我的消息
-//    if ([presence.type isEqualToString:@"subscribe"]) {
-//        
+    if ([presence.type isEqualToString:@"subscribe"]) {
+        
 //        QYHChatMssegeModel *messegeModel = [[QYHChatMssegeModel alloc]init];
 //        
 //        //添加好友的信息
@@ -504,59 +479,59 @@ singleton_implementation(QYHXMPPTool)
 //        messegeModel.isRead      = NO;
 //        
 //        [self inserNewFriendNoti:messegeModel];
-//    }
+        
+    }
     
     //收到对方取消定阅我的消息
     if ([presence.type isEqualToString:@"unsubscribe"]) {
         //从我的本地通讯录中将他移除
         
-        if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
-            //删除好友
-            [[QYHXMPPTool sharedQYHXMPPTool].roster removeUser:presence.from];
-            
-            __weak typeof(self) weakself = self;
-            
-            [[QYHFMDBmanager shareInstance]deleteChatMessegeByFromUserID:presence.from.user completion:^(BOOL result) {
-                
-                if (result) {
-                    
-                    [[QYHFMDBmanager shareInstance]deleteAddFriendMessegeByFromUserID:presence.from.user completion:^(BOOL result) {
-                        
-                        if (result) {
-                            
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                
-                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                    
-                                    /**
-                                     *  传到信息聊天界面刷新数据
-                                     */
-
-                                    [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveAddFriendNotification object:nil];
-                                });
-                                
-                            });
-                            
-                        }else{
-                            NSLog(@"删除对应的新朋友信息失败");
-                        }
-                        
-                    }];
-                    
-                }else{
-                    NSLog(@"删除好友失败");
-                }
-            }];
-            
-        }else{
-            [QYHProgressHUD showErrorHUD:nil message:@"网络连接失败"];
-        }
+//        if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
+//            //删除好友
+//            [[QYHXMPPTool sharedQYHXMPPTool].roster removeUser:presence.from];
+//            
+//            __weak typeof(self) weakself = self;
+//            
+//            [[QYHFMDBmanager shareInstance]deleteChatMessegeByFromUserID:presence.from.user completion:^(BOOL result) {
+//                
+//                if (result) {
+//                    
+//                    [[QYHFMDBmanager shareInstance]deleteAddFriendMessegeByFromUserID:presence.from.user completion:^(BOOL result) {
+//                        
+//                        if (result) {
+//                            
+//                            dispatch_async(dispatch_get_main_queue(), ^{
+//                                
+//                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                                    
+//                                    /**
+//                                     *  传到信息聊天界面刷新数据
+//                                     */
+//
+//                                    [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveAddFriendNotification object:nil];
+//                                });
+//                                
+//                            });
+//                            
+//                        }else{
+//                            NSLog(@"删除对应的新朋友信息失败");
+//                        }
+//                        
+//                    }];
+//                    
+//                }else{
+//                    NSLog(@"删除好友失败");
+//                }
+//            }];
+//            
+//        }else{
+//            [QYHProgressHUD showErrorHUD:nil message:@"网络连接失败"];
+//        }
     }
 
 }
 
 #pragma mark-接收到信息
-
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
 
@@ -573,95 +548,155 @@ singleton_implementation(QYHXMPPTool)
         
         QYHChatMssegeModel *messegeModel = [[QYHChatMssegeModel alloc]init];
         
-        //添加好友的信息
+        
         if (type == SendAddFriend) {
-            
-            messegeModel.messegeID   = dic[@"messegeID"];
-            messegeModel.fromUserID  = [[message from] user];
-            messegeModel.toUserID    = [[message to] user];
-            messegeModel.content     = [dic[@"content"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            messegeModel.time        = dic[@"time"];
-            messegeModel.type        = [dic[@"type"] integerValue];
-            messegeModel.addStatus   = [dic[@"status"] integerValue];
-            messegeModel.isRead      = [dic[@"isRead"] boolValue];
-            
-            [self inserNewFriendNoti:messegeModel];
-            
-            //朋友圈更新信息
+            //添加好友的信息
+            [self insertNewFriendInfo:messegeModel dic:dic didReceiveMessage:message];
+           
         }else if(type == SendNewCircle){
+             //朋友圈更新信息
             
-        }else{
-            
-            messegeModel.messegeID   = dic[@"messegeID"];
-            messegeModel.fromUserID  = [[message from] user];
-            messegeModel.toUserID    = [[message to] user];
-            messegeModel.content     = [dic[@"content"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            messegeModel.time        = dic[@"time"];
-            messegeModel.type        = [dic[@"type"] integerValue];
-            messegeModel.status      = [dic[@"status"] integerValue];
-            messegeModel.audioTime   = [dic[@"audioTime"] integerValue];
-            messegeModel.imageType   = [dic[@"imageType"] integerValue];
-            messegeModel.ratioHW     = [dic[@"ratioHW"] floatValue];
-            messegeModel.isRead      = [dic[@"isRead"] boolValue];
-            messegeModel.isReadVioce = [dic[@"isReadVioce"] boolValue];
-            
-            
-            __weak typeof (self) weak_self = self;
-            
-            [[QYHFMDBmanager shareInstance] insertChatMessege:messegeModel completion:^(BOOL result) {
-                
-                if (!result) {
-                    NSLog(@"ChatMssege插入数据失败");
-                }else{
-                    //是语音的话就能下载好再推送，不是就直接推
-                    if (messegeModel.type == SendVoice) {
-                        [weak_self downloadVoice:messegeModel.content messegeModel:messegeModel];
-                    }else{
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            
-                            [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveChatMessageNotification object:messegeModel];
-                            
-                            [weak_self presentLocalNotice:@"您收到一条消息"];
-                        });
-                        
-                    }
-                    
-                }
-                
-            }];
+        }else if(type == SendDeleteFrien){
+            //删除好友
+            [self deleteFriendDidReceiveMessage:message];
+        }else {
+            //好友发送的消息
+            [self didReceiveMessage:messegeModel dic:dic message:message];
         }
     }
 }
 
 
+//添加好友的信息
+- (void)insertNewFriendInfo:(QYHChatMssegeModel *)messegeModel dic:(NSDictionary *)dic didReceiveMessage:(XMPPMessage *)message{
+    
+    messegeModel.messegeID   = dic[@"messegeID"];
+    messegeModel.fromUserID  = [[message from] user];
+    messegeModel.toUserID    = [[message to] user];
+    messegeModel.content     = [dic[@"content"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    messegeModel.time        = dic[@"time"];
+    messegeModel.type        = [dic[@"type"] integerValue];
+    messegeModel.addStatus   = [dic[@"status"] integerValue];
+    messegeModel.isRead      = [dic[@"isRead"] boolValue];
+    
+    [self inserNewFriendNoti:messegeModel];
+    
+}
+
+
+//删除好友
+- (void)deleteFriendDidReceiveMessage:(XMPPMessage *)message{
+    
+    if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
+        
+        XMPPJID *myJid = [QYHXMPPTool sharedQYHXMPPTool].xmppStream.myJID;
+        XMPPJID *byJID = [XMPPJID jidWithUser:[[message from] user]  domain:myJid.domain resource:myJid.resource];
+        
+        //删除好友
+        [[QYHXMPPTool sharedQYHXMPPTool].roster removeUser:byJID];
+        
+        __weak typeof(self) weakself = self;
+        
+        [[QYHFMDBmanager shareInstance]deleteChatMessegeByFromUserID:[[message from] user] completion:^(BOOL result) {
+            
+            if (result) {
+                
+                [[QYHFMDBmanager shareInstance]deleteAddFriendMessegeByFromUserID:[[message from] user] completion:^(BOOL result) {
+                    
+                    if (result) {
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                
+                                /**
+                                 *  传到信息聊天界面刷新数据
+                                 */
+                                
+                                [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveAddFriendNotification object:nil];
+                            });
+                            
+                        });
+                        
+                    }else{
+                        NSLog(@"删除对应的新朋友信息失败");
+                    }
+                    
+                }];
+                
+            }else{
+                NSLog(@"删除好友失败");
+            }
+        }];
+        
+    }else{
+        [QYHProgressHUD showErrorHUD:nil message:@"网络连接失败"];
+    }
+}
+
+
+//好友发送的消息
+- (void)didReceiveMessage:(QYHChatMssegeModel *)messegeModel dic:(NSDictionary *)dic  message:(XMPPMessage *)message{
+    
+    messegeModel.messegeID   = dic[@"messegeID"];
+    messegeModel.fromUserID  = [[message from] user];
+    messegeModel.toUserID    = [[message to] user];
+    messegeModel.content     = [dic[@"content"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    messegeModel.time        = dic[@"time"];
+    messegeModel.type        = [dic[@"type"] integerValue];
+    messegeModel.status      = [dic[@"status"] integerValue];
+    messegeModel.audioTime   = [dic[@"audioTime"] integerValue];
+    messegeModel.imageType   = [dic[@"imageType"] integerValue];
+    messegeModel.ratioHW     = [dic[@"ratioHW"] floatValue];
+    messegeModel.isRead      = [dic[@"isRead"] boolValue];
+    messegeModel.isReadVioce = [dic[@"isReadVioce"] boolValue];
+    
+    
+    __weak typeof (self) weak_self = self;
+    
+    [[QYHFMDBmanager shareInstance] insertChatMessege:messegeModel completion:^(BOOL result) {
+        
+        if (!result) {
+            NSLog(@"ChatMssege插入数据失败");
+        }else{
+            //是语音的话就能下载好再推送，不是就直接推
+            if (messegeModel.type == SendVoice) {
+                [weak_self downloadVoice:messegeModel.content messegeModel:messegeModel];
+            }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveChatMessageNotification object:messegeModel];
+                    
+                    [weak_self presentLocalNotice:@"您收到一条消息"];
+                });
+                
+            }
+            
+        }
+        
+    }];
+}
+
+//添加到数据库
 - (void)inserNewFriendNoti:(QYHChatMssegeModel *)messegeModel{
     
     __weak typeof (self) weak_self = self;
     
-    [[QYHFMDBmanager shareInstance]deleteAddFriendMessegeByFromUserID:messegeModel.fromUserID  completion:^(BOOL result) {
+    [[QYHFMDBmanager shareInstance] insertAddFriendMessege:messegeModel completion:^(BOOL result) {
         
         if (!result) {
-            NSLog(@"AddFriend删除数据失败");
+            NSLog(@"AddFriend插入数据失败");
         }else{
             
-            [[QYHFMDBmanager shareInstance] insertAddFriendMessege:messegeModel completion:^(BOOL result) {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
-                if (!result) {
-                    NSLog(@"AddFriend插入数据失败");
-                }else{
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveChatMessageNotification object:messegeModel];
-                        
-                        [weak_self presentLocalNotice:@"您收到一条消息"];
-                    });
-                }
+                [[NSNotificationCenter defaultCenter] postNotificationName:KReceiveChatMessageNotification object:messegeModel];
                 
-            }];
+                [weak_self presentLocalNotice:@"您收到一条消息"];
+            });
         }
+        
     }];
-
 }
 
 
@@ -765,19 +800,11 @@ singleton_implementation(QYHXMPPTool)
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveError:(DDXMLElement *)error{
     
-    NSLog(@"error==%@",error);
+    NSLog(@"didReceiveError==%@",error);
     
     NSArray *elements = [error elementsForName:@"conflict"];
     if (elements.count) {
-        
         [[NSNotificationCenter defaultCenter]postNotificationName:KReceiveErrorConflictNotification object:nil];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示"
-                                                            message:@"您的账号已在其它手机登录"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确认"
-                                                  otherButtonTitles:nil];
-        [alertView show];
     }
 }
 

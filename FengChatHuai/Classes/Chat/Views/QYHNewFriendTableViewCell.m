@@ -8,6 +8,7 @@
 
 #import "QYHNewFriendTableViewCell.h"
 #import "XMPPvCardTemp.h"
+#import "QYHContactModel.h"
 
 @implementation QYHNewFriendTableViewCell
 
@@ -64,11 +65,23 @@
 //    XMPPvCardTemp *vCard =  [[QYHXMPPTool sharedQYHXMPPTool].vCard vCardTempForJID:byJID shouldFetch:YES];
     
      XMPPvCardTemp *vCard = [[QYHXMPPvCardTemp shareInstance] vCard:messegeModel.fromUserID];
-    
+//
     self.nameLabel.text    = vCard.nickname ? [vCard.nickname stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]:messegeModel.fromUserID;
     self.imgView.image     = [UIImage imageWithData:vCard.photo ?vCard.photo:UIImageJPEGRepresentation([UIImage imageNamed:@"placeholder"], 1.0)];
     self.contentLabel.text = messegeModel.content;
     
+    
+    QYHChatMssegeModel *model = messegeModel;
+    
+    for (QYHContactModel *user in [QYHChatDataStorage shareInstance].usersArray) {
+        if ([user.jid.user isEqualToString:[model.fromUserID isEqualToString:[QYHAccount shareAccount].loginUser]?model.toUserID:model.fromUserID]) {
+            
+            self.nameLabel.text = user.nickname ? [user.nickname stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]:user.vCard.nickname ? [user.vCard.nickname stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]: [user.displayName stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            break;
+        }
+    }
+
 //    messegeModel.messegeID
 //    messegeModel.fromUserID
 //    messegeModel.toUserID
