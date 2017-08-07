@@ -596,12 +596,6 @@
 		9C16E56F1CEF090000258A65 /* QYHBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C16E56E1CEF090000258A65 /* QYHBaseNavigationController.m */; };
 		9C16E5721CEF093F00258A65 /* QYHChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C16E5711CEF093F00258A65 /* QYHChatViewController.m */; };
 		9C16E5751CEF095B00258A65 /* QYHContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C16E5741CEF095B00258A65 /* QYHContactsViewController.m */; };
-		9C18630D1D0D091B00E3C7D2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1863021D0D091B00E3C7D2 /* FMDatabase.m */; };
-		9C18630E1D0D091B00E3C7D2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1863041D0D091B00E3C7D2 /* FMDatabaseAdditions.m */; };
-		9C18630F1D0D091B00E3C7D2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1863061D0D091B00E3C7D2 /* FMDatabasePool.m */; };
-		9C1863101D0D091B00E3C7D2 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1863081D0D091B00E3C7D2 /* FMDatabaseQueue.m */; };
-		9C1863111D0D091B00E3C7D2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18630B1D0D091B00E3C7D2 /* FMResultSet.m */; };
-		9C1863121D0D091B00E3C7D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C18630C1D0D091B00E3C7D2 /* Info.plist */; };
 		9C1863151D0D098A00E3C7D2 /* QYHFMDBmanager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1863141D0D098A00E3C7D2 /* QYHFMDBmanager.m */; };
 		9C1863181D0D160C00E3C7D2 /* QYHChatMssegeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1863171D0D160C00E3C7D2 /* QYHChatMssegeModel.m */; };
 		9C18631A1D0D31EE00E3C7D2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1863191D0D31EE00E3C7D2 /* libsqlite3.tbd */; };
@@ -610,18 +604,7 @@
 		9C1FC41B1D61A39D0053235A /* QYHDiscoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1FC41A1D61A39D0053235A /* QYHDiscoverTableViewCell.m */; };
 		9C246C821D4EE8C90068575D /* QYHXMPPvCardTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C246C801D4EE8C90068575D /* QYHXMPPvCardTemp.m */; };
 		9C24CF431CF5A1AD00787DC0 /* QYHAddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C24CF421CF5A1AD00787DC0 /* QYHAddTableViewController.m */; };
-		9C29077C1D488B1E00224D07 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2907681D488B1E00224D07 /* MJExtensionConst.m */; };
-		9C29077D1D488B1E00224D07 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29076A1D488B1E00224D07 /* MJFoundation.m */; };
-		9C29077E1D488B1E00224D07 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29076C1D488B1E00224D07 /* MJProperty.m */; };
-		9C29077F1D488B1E00224D07 /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29076E1D488B1E00224D07 /* MJPropertyKey.m */; };
-		9C2907801D488B1E00224D07 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2907701D488B1E00224D07 /* MJPropertyType.m */; };
-		9C2907811D488B1E00224D07 /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2907721D488B1E00224D07 /* NSObject+MJClass.m */; };
-		9C2907821D488B1E00224D07 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2907741D488B1E00224D07 /* NSObject+MJCoding.m */; };
-		9C2907831D488B1E00224D07 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2907761D488B1E00224D07 /* NSObject+MJKeyValue.m */; };
-		9C2907841D488B1E00224D07 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2907781D488B1E00224D07 /* NSObject+MJProperty.m */; };
-		9C2907851D488B1E00224D07 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29077A1D488B1E00224D07 /* NSString+MJExtension.m */; };
 		9C2F29F31D1A8EDB009459FC /* QYHMessageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F29F21D1A8EDB009459FC /* QYHMessageTableView.m */; };
-		9C2F90431D262C5C0051336F /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2F90421D262C5C0051336F /* MOBFoundation.framework */; };
 		9C2F90461D26549C0051336F /* QYHInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F90451D26549C0051336F /* QYHInformationModel.m */; };
 		9C3683C31D6A94D300D86AA0 /* QYHDiscoverHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3683C21D6A94D300D86AA0 /* QYHDiscoverHeight.m */; };
 		9C3683C61D6AD49F00D86AA0 /* QYHOtherInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3683C51D6AD49F00D86AA0 /* QYHOtherInformationViewController.m */; };
@@ -629,7 +612,6 @@
 		9C3DF6B61D7FE2AA00296171 /* QYHCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DF6B51D7FE2AA00296171 /* QYHCircleModel.m */; };
 		9C3DF6BC1D7FED1A00296171 /* QYHCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3DF6BB1D7FED1A00296171 /* QYHCircleCell.m */; };
 		9C402C4E1D24F91B0000B7EB /* QYHGetCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C402C4D1D24F91B0000B7EB /* QYHGetCodeViewController.m */; };
-		9C402C531D250EA20000B7EB /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C402C511D250EA20000B7EB /* SMS_SDK.framework */; };
 		9C402C551D250ECB0000B7EB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C402C541D250ECB0000B7EB /* libz.tbd */; };
 		9C402C571D250EDF0000B7EB /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C402C561D250EDF0000B7EB /* libicucore.tbd */; };
 		9C402C591D250EEB0000B7EB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C402C581D250EEB0000B7EB /* MessageUI.framework */; };
@@ -662,8 +644,6 @@
 		9C9CD0A01F331AB600F913C4 /* QYHKeyBoardManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9CD09E1F331AB600F913C4 /* QYHKeyBoardManager.a */; };
 		9CBE674F1D22116D000A785E /* QYHVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBE674D1D22116D000A785E /* QYHVerificationViewController.m */; };
 		9CBE67501D22116D000A785E /* QYHVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CBE674E1D22116D000A785E /* QYHVerificationViewController.xib */; };
-		9CCDDCBB1CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDDCB71CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m */; };
-		9CCDDCBC1CED9DA8004153D7 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDDCB91CED9DA8004153D7 /* UIView+SDAutoLayout.m */; };
 		9CEC92241D0F9D6400576272 /* QYHBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC92231D0F9D6400576272 /* QYHBackgroundView.m */; };
 		9CEE2E601CF4345800807BDE /* QYHSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE2E5F1CF4345800807BDE /* QYHSetTableViewController.m */; };
 		9CEE2E631CF445A000807BDE /* QYHProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE2E621CF445A000807BDE /* QYHProfileTableViewController.m */; };
@@ -1370,18 +1350,6 @@
 		9C16E5711CEF093F00258A65 /* QYHChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHChatViewController.m; sourceTree = "<group>"; };
 		9C16E5731CEF095B00258A65 /* QYHContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHContactsViewController.h; sourceTree = "<group>"; };
 		9C16E5741CEF095B00258A65 /* QYHContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHContactsViewController.m; sourceTree = "<group>"; };
-		9C1863011D0D091B00E3C7D2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		9C1863021D0D091B00E3C7D2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		9C1863031D0D091B00E3C7D2 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		9C1863041D0D091B00E3C7D2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		9C1863051D0D091B00E3C7D2 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		9C1863061D0D091B00E3C7D2 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		9C1863071D0D091B00E3C7D2 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		9C1863081D0D091B00E3C7D2 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		9C1863091D0D091B00E3C7D2 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		9C18630A1D0D091B00E3C7D2 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		9C18630B1D0D091B00E3C7D2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		9C18630C1D0D091B00E3C7D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1863131D0D098A00E3C7D2 /* QYHFMDBmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHFMDBmanager.h; sourceTree = "<group>"; };
 		9C1863141D0D098A00E3C7D2 /* QYHFMDBmanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHFMDBmanager.m; sourceTree = "<group>"; };
 		9C1863161D0D160C00E3C7D2 /* QYHChatMssegeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHChatMssegeModel.h; sourceTree = "<group>"; };
@@ -1397,30 +1365,8 @@
 		9C246C811D4EE8C90068575D /* QYHXMPPvCardTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHXMPPvCardTemp.h; sourceTree = "<group>"; };
 		9C24CF411CF5A1AD00787DC0 /* QYHAddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHAddTableViewController.h; sourceTree = "<group>"; };
 		9C24CF421CF5A1AD00787DC0 /* QYHAddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHAddTableViewController.m; sourceTree = "<group>"; };
-		9C2907661D488B1E00224D07 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
-		9C2907671D488B1E00224D07 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
-		9C2907681D488B1E00224D07 /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
-		9C2907691D488B1E00224D07 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
-		9C29076A1D488B1E00224D07 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
-		9C29076B1D488B1E00224D07 /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
-		9C29076C1D488B1E00224D07 /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
-		9C29076D1D488B1E00224D07 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
-		9C29076E1D488B1E00224D07 /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
-		9C29076F1D488B1E00224D07 /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
-		9C2907701D488B1E00224D07 /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
-		9C2907711D488B1E00224D07 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
-		9C2907721D488B1E00224D07 /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
-		9C2907731D488B1E00224D07 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
-		9C2907741D488B1E00224D07 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
-		9C2907751D488B1E00224D07 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
-		9C2907761D488B1E00224D07 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
-		9C2907771D488B1E00224D07 /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
-		9C2907781D488B1E00224D07 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
-		9C2907791D488B1E00224D07 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
-		9C29077A1D488B1E00224D07 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		9C2F29F11D1A8EDB009459FC /* QYHMessageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHMessageTableView.h; sourceTree = "<group>"; };
 		9C2F29F21D1A8EDB009459FC /* QYHMessageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHMessageTableView.m; sourceTree = "<group>"; };
-		9C2F90421D262C5C0051336F /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		9C2F90441D26549C0051336F /* QYHInformationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYHInformationModel.h; path = FengChatHuai/Classes/Login/Controllers/QYHInformationModel.h; sourceTree = SOURCE_ROOT; };
 		9C2F90451D26549C0051336F /* QYHInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYHInformationModel.m; path = FengChatHuai/Classes/Login/Controllers/QYHInformationModel.m; sourceTree = SOURCE_ROOT; };
 		9C3683C11D6A94D300D86AA0 /* QYHDiscoverHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYHDiscoverHeight.h; path = FengChatHuai/Classes/Me/Controllers/QYHDiscoverHeight.h; sourceTree = SOURCE_ROOT; };
@@ -1435,7 +1381,6 @@
 		9C3DF6BB1D7FED1A00296171 /* QYHCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYHCircleCell.m; path = FengChatHuai/Classes/Me/Controllers/QYHCircleCell.m; sourceTree = SOURCE_ROOT; };
 		9C402C4C1D24F91B0000B7EB /* QYHGetCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHGetCodeViewController.h; sourceTree = "<group>"; };
 		9C402C4D1D24F91B0000B7EB /* QYHGetCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHGetCodeViewController.m; sourceTree = "<group>"; };
-		9C402C511D250EA20000B7EB /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		9C402C541D250ECB0000B7EB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		9C402C561D250EDF0000B7EB /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		9C402C581D250EEB0000B7EB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1496,10 +1441,6 @@
 		9CBE674C1D22116D000A785E /* QYHVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHVerificationViewController.h; sourceTree = "<group>"; };
 		9CBE674D1D22116D000A785E /* QYHVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHVerificationViewController.m; sourceTree = "<group>"; };
 		9CBE674E1D22116D000A785E /* QYHVerificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QYHVerificationViewController.xib; sourceTree = "<group>"; };
-		9CCDDCB61CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
-		9CCDDCB71CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
-		9CCDDCB81CED9DA8004153D7 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
-		9CCDDCB91CED9DA8004153D7 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 		9CEC92221D0F9D6400576272 /* QYHBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHBackgroundView.h; sourceTree = "<group>"; };
 		9CEC92231D0F9D6400576272 /* QYHBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYHBackgroundView.m; sourceTree = "<group>"; };
 		9CEE2E5E1CF4345800807BDE /* QYHSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYHSetTableViewController.h; sourceTree = "<group>"; };
@@ -1549,8 +1490,6 @@
 				9C402C591D250EEB0000B7EB /* MessageUI.framework in Frameworks */,
 				9C402C571D250EDF0000B7EB /* libicucore.tbd in Frameworks */,
 				9C402C551D250ECB0000B7EB /* libz.tbd in Frameworks */,
-				9C402C531D250EA20000B7EB /* SMS_SDK.framework in Frameworks */,
-				9C2F90431D262C5C0051336F /* MOBFoundation.framework in Frameworks */,
 				9C18631A1D0D31EE00E3C7D2 /* libsqlite3.tbd in Frameworks */,
 				6620369FA8522E67334DB494 /* Pods_FengChatHuai.framework in Frameworks */,
 				9C9CD0A01F331AB600F913C4 /* QYHKeyBoardManager.a in Frameworks */,
@@ -2498,62 +2437,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		9C1863001D0D091B00E3C7D2 /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				9C1863011D0D091B00E3C7D2 /* FMDatabase.h */,
-				9C1863021D0D091B00E3C7D2 /* FMDatabase.m */,
-				9C1863031D0D091B00E3C7D2 /* FMDatabaseAdditions.h */,
-				9C1863041D0D091B00E3C7D2 /* FMDatabaseAdditions.m */,
-				9C1863051D0D091B00E3C7D2 /* FMDatabasePool.h */,
-				9C1863061D0D091B00E3C7D2 /* FMDatabasePool.m */,
-				9C1863071D0D091B00E3C7D2 /* FMDatabaseQueue.h */,
-				9C1863081D0D091B00E3C7D2 /* FMDatabaseQueue.m */,
-				9C1863091D0D091B00E3C7D2 /* FMDB.h */,
-				9C18630A1D0D091B00E3C7D2 /* FMResultSet.h */,
-				9C18630B1D0D091B00E3C7D2 /* FMResultSet.m */,
-				9C18630C1D0D091B00E3C7D2 /* Info.plist */,
-			);
-			path = fmdb;
-			sourceTree = "<group>";
-		};
-		9C2907641D488B1E00224D07 /* MJExtension */ = {
-			isa = PBXGroup;
-			children = (
-				9C2907661D488B1E00224D07 /* MJExtension.h */,
-				9C2907671D488B1E00224D07 /* MJExtensionConst.h */,
-				9C2907681D488B1E00224D07 /* MJExtensionConst.m */,
-				9C2907691D488B1E00224D07 /* MJFoundation.h */,
-				9C29076A1D488B1E00224D07 /* MJFoundation.m */,
-				9C29076B1D488B1E00224D07 /* MJProperty.h */,
-				9C29076C1D488B1E00224D07 /* MJProperty.m */,
-				9C29076D1D488B1E00224D07 /* MJPropertyKey.h */,
-				9C29076E1D488B1E00224D07 /* MJPropertyKey.m */,
-				9C29076F1D488B1E00224D07 /* MJPropertyType.h */,
-				9C2907701D488B1E00224D07 /* MJPropertyType.m */,
-				9C2907711D488B1E00224D07 /* NSObject+MJClass.h */,
-				9C2907721D488B1E00224D07 /* NSObject+MJClass.m */,
-				9C2907731D488B1E00224D07 /* NSObject+MJCoding.h */,
-				9C2907741D488B1E00224D07 /* NSObject+MJCoding.m */,
-				9C2907751D488B1E00224D07 /* NSObject+MJKeyValue.h */,
-				9C2907761D488B1E00224D07 /* NSObject+MJKeyValue.m */,
-				9C2907771D488B1E00224D07 /* NSObject+MJProperty.h */,
-				9C2907781D488B1E00224D07 /* NSObject+MJProperty.m */,
-				9C2907791D488B1E00224D07 /* NSString+MJExtension.h */,
-				9C29077A1D488B1E00224D07 /* NSString+MJExtension.m */,
-			);
-			path = MJExtension;
-			sourceTree = "<group>";
-		};
-		9C402C4F1D250EA20000B7EB /* SMS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				9C2F90421D262C5C0051336F /* MOBFoundation.framework */,
-				9C402C511D250EA20000B7EB /* SMS_SDK.framework */,
-			);
-			path = SMS_SDK;
-			sourceTree = "<group>";
-		};
 		9C47F4C21D5873180086505A /* MLEmojiLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2803,17 +2686,13 @@
 		9C70DAE81CED6F00003ADB63 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				9C9CD0971F330AF400F913C4 /* QiniuPutPolicy.h */,
-				9C9CD0981F330AF400F913C4 /* QiniuPutPolicy.m */,
-				9C47F4C21D5873180086505A /* MLEmojiLabel */,
-				9C2907641D488B1E00224D07 /* MJExtension */,
-				9C402C4F1D250EA20000B7EB /* SMS_SDK */,
-				9C1863001D0D091B00E3C7D2 /* fmdb */,
-				3A4C62221D03C83100074DB8 /* MulSelectedPhoto */,
 				9CF13D591CEDB73E004F51C8 /* QYHProgressHUD.h */,
 				9CF13D5A1CEDB73E004F51C8 /* QYHProgressHUD.m */,
+				9C9CD0971F330AF400F913C4 /* QiniuPutPolicy.h */,
+				9C9CD0981F330AF400F913C4 /* QiniuPutPolicy.m */,
 				9CCDDCB21CED9DA8004153D7 /* QYHKeyBoard */,
-				9CCDDCB51CED9DA8004153D7 /* SDAutoLayout */,
+				9C47F4C21D5873180086505A /* MLEmojiLabel */,
+				3A4C62221D03C83100074DB8 /* MulSelectedPhoto */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -2840,17 +2719,6 @@
 				9C9CD09F1F331AB600F913C4 /* QYHKeyBoardManager.h */,
 			);
 			path = QYHKeyBoard;
-			sourceTree = "<group>";
-		};
-		9CCDDCB51CED9DA8004153D7 /* SDAutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-				9CCDDCB61CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.h */,
-				9CCDDCB71CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m */,
-				9CCDDCB81CED9DA8004153D7 /* UIView+SDAutoLayout.h */,
-				9CCDDCB91CED9DA8004153D7 /* UIView+SDAutoLayout.m */,
-			);
-			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3173,7 +3041,6 @@
 				9C1312AE1CF82B4300788672 /* password@2x.png in Resources */,
 				9C1312B81CF82B4300788672 /* setting.png in Resources */,
 				9C13127C1CF82B4200788672 /* dd_recent_contacts.png in Resources */,
-				9C1863121D0D091B00E3C7D2 /* Info.plist in Resources */,
 				3ACB104F1CF71CB00036432F /* 059.png in Resources */,
 				3ACB109F1CF71CB00036432F /* 086.gif in Resources */,
 				3ACB10FE1CF71CB00036432F /* 143.gif in Resources */,
@@ -3562,11 +3429,8 @@
 				9CF13D361CEDA8C6004F51C8 /* NSString+Additions.m in Sources */,
 				9C3683C61D6AD49F00D86AA0 /* QYHOtherInformationViewController.m in Sources */,
 				3A4C62C01D03C83100074DB8 /* DNUnAuthorizedTipsView.m in Sources */,
-				9C2907831D488B1E00224D07 /* NSObject+MJKeyValue.m in Sources */,
 				9C3DF6BC1D7FED1A00296171 /* QYHCircleCell.m in Sources */,
 				3A4C62AF1D03C83100074DB8 /* DNImageFlowViewController.m in Sources */,
-				9C18630E1D0D091B00E3C7D2 /* FMDatabaseAdditions.m in Sources */,
-				9C1863111D0D091B00E3C7D2 /* FMResultSet.m in Sources */,
 				9C41A2531CF68FB900F51C03 /* QYHContenViewController.m in Sources */,
 				3A4C62A91D03C83100074DB8 /* MWTapDetectingImageView.m in Sources */,
 				9CFA571C1CF3E74B00DB8F39 /* QYHAccount.m in Sources */,
@@ -3579,7 +3443,6 @@
 				9C1FC41B1D61A39D0053235A /* QYHDiscoverTableViewCell.m in Sources */,
 				9CF13D451CEDAEF8004F51C8 /* UIColor+Additions.m in Sources */,
 				3A4C62A81D03C83100074DB8 /* MWPhotoBrowser.m in Sources */,
-				9C2907811D488B1E00224D07 /* NSObject+MJClass.m in Sources */,
 				9CF338D01D0E9B2200EEE006 /* QYHContactModel.m in Sources */,
 				9CF13D3F1CEDAE36004F51C8 /* UIView+DDAddition.m in Sources */,
 				9C0E7C491D64008F003F4759 /* QYHTrendsViewController.m in Sources */,
@@ -3600,7 +3463,6 @@
 				3A4C62BF1D03C83100074DB8 /* DNSendButton.m in Sources */,
 				9C3702B91D5C5BDD00297693 /* QYHWebViewController.m in Sources */,
 				3A4C62AE1D03C83100074DB8 /* DNAsset.m in Sources */,
-				9C18630D1D0D091B00E3C7D2 /* FMDatabase.m in Sources */,
 				3A4C62AD1D03C83100074DB8 /* DNAlbumTableViewController.m in Sources */,
 				9C9014891D2B888900A6BE89 /* QYHSCanViewController.m in Sources */,
 				3A4C629E1D03C83100074DB8 /* MJPhotoBrowser.m in Sources */,
@@ -3612,19 +3474,16 @@
 				3ACB11521CF723660036432F /* QYHFriendModelClass.m in Sources */,
 				3A2164951D33BB550033C123 /* Reachability.m in Sources */,
 				9C402C4E1D24F91B0000B7EB /* QYHGetCodeViewController.m in Sources */,
-				9C29077E1D488B1E00224D07 /* MJProperty.m in Sources */,
 				9C70DAA41CED691C003ADB63 /* AppDelegate.m in Sources */,
 				3A4C62AA1D03C83100074DB8 /* MWTapDetectingView.m in Sources */,
 				3A4C629B1D03C83100074DB8 /* DACircularProgressView.m in Sources */,
 				3A4C62CB1D03C83100074DB8 /* PSTCollectionViewLayout.m in Sources */,
-				9CCDDCBC1CED9DA8004153D7 /* UIView+SDAutoLayout.m in Sources */,
 				3A4C62C91D03C83100074DB8 /* PSTCollectionViewFlowLayout.m in Sources */,
 				3A4C62BE1D03C83100074DB8 /* DNFullImageButton.m in Sources */,
 				3A4C62BD1D03C83100074DB8 /* DNBrowserCell.m in Sources */,
 				3A4C62A01D03C83100074DB8 /* MJPhotoProgressView.m in Sources */,
 				3A4C62C51D03C83100074DB8 /* PSTCollectionView.m in Sources */,
 				9CEC92241D0F9D6400576272 /* QYHBackgroundView.m in Sources */,
-				9C29077F1D488B1E00224D07 /* MJPropertyKey.m in Sources */,
 				3ACB11461CF722720036432F /* QYHImageModelClass.m in Sources */,
 				9C1863151D0D098A00E3C7D2 /* QYHFMDBmanager.m in Sources */,
 				9C3683C31D6A94D300D86AA0 /* QYHDiscoverHeight.m in Sources */,
@@ -3639,7 +3498,6 @@
 				3A3265931D353517002F2347 /* QYHNewFriendTableViewCell.m in Sources */,
 				3A4C62BB1D03C83100074DB8 /* DNAssetsViewCell.m in Sources */,
 				9CF13D4B1CEDAF2C004F51C8 /* CALayer+Additions.m in Sources */,
-				9C2907851D488B1E00224D07 /* NSString+MJExtension.m in Sources */,
 				9C47F4C11D5868CE0086505A /* QYHResultFromScanViewController.m in Sources */,
 				9C4052691D87DB4300D499E3 /* QYHUploadHeadImageTableViewController.m in Sources */,
 				9C2F90461D26549C0051336F /* QYHInformationModel.m in Sources */,
@@ -3648,7 +3506,6 @@
 				9C47F4CF1D5874C80086505A /* TTTAttributedLabel.m in Sources */,
 				9CF13D4E1CEDAF3C004F51C8 /* UIBarButtonItem+Additions.m in Sources */,
 				3ACB11401CF7210D0036432F /* QYHMoreView.m in Sources */,
-				9C18630F1D0D091B00E3C7D2 /* FMDatabasePool.m in Sources */,
 				9C24CF431CF5A1AD00787DC0 /* QYHAddTableViewController.m in Sources */,
 				3A4C62B21D03C83100074DB8 /* DNPhotoBrowser.m in Sources */,
 				3A4C62C11D03C83100074DB8 /* JKPromptView.m in Sources */,
@@ -3658,14 +3515,12 @@
 				9C4A27651D460887004DA08F /* QYHContactsCell.m in Sources */,
 				9C0EA89F1D77D6FF00DB01ED /* QYHCommentCell.m in Sources */,
 				9C7630011CF3029B00942213 /* QYHXMPPTool.m in Sources */,
-				9C2907821D488B1E00224D07 /* NSObject+MJCoding.m in Sources */,
 				3ACB113D1CF720A70036432F /* QYHFunctionView.m in Sources */,
 				9C19D0571D0657110057589B /* QYHChatDataStorage.m in Sources */,
 				3A5E9AC51D0BF2A7005B40C6 /* QYHRecordingView.m in Sources */,
 				9C2F29F31D1A8EDB009459FC /* QYHMessageTableView.m in Sources */,
 				3A4C62C21D03C83100074DB8 /* PictureCollectionViewCell.m in Sources */,
 				9C762FFD1CF301EF00942213 /* QYHHttpTool.m in Sources */,
-				9CCDDCBB1CED9DA8004153D7 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				9CEE2E661CF445BA00807BDE /* QYHEditTableViewController.m in Sources */,
 				3A4C62B81D03C83100074DB8 /* UIViewController+DNImagePicker.m in Sources */,
 				3A3265901D3534F4002F2347 /* QYHNewFriendViewController.m in Sources */,
@@ -3676,21 +3531,16 @@
 				3A4C62B61D03C83100074DB8 /* UIImage+AssetImage.m in Sources */,
 				9C1311E11CF7D45B00788672 /* QYHChatCell.m in Sources */,
 				3A4C62A61D03C83100074DB8 /* MWGridViewController.m in Sources */,
-				9C1863101D0D091B00E3C7D2 /* FMDatabaseQueue.m in Sources */,
 				3A4C62CC1D03C83100074DB8 /* PSTCollectionViewUpdateItem.m in Sources */,
-				9C2907841D488B1E00224D07 /* NSObject+MJProperty.m in Sources */,
 				9C3DF6B61D7FE2AA00296171 /* QYHCircleModel.m in Sources */,
 				9C90148C1D2BB0C300A6BE89 /* QYHDetailTableViewController.m in Sources */,
-				9C2907801D488B1E00224D07 /* MJPropertyType.m in Sources */,
 				9CF6AD431D2E472B0085A5B2 /* QYHSetNickNameTableViewController.m in Sources */,
 				3A4C62C81D03C83100074DB8 /* PSTCollectionViewData.m in Sources */,
 				9C1863181D0D160C00E3C7D2 /* QYHChatMssegeModel.m in Sources */,
 				3ACB114F1CF723410036432F /* QYHHistoryFrirend.m in Sources */,
 				3A4C629C1D03C83100074DB8 /* MJPhoto.m in Sources */,
-				9C29077C1D488B1E00224D07 /* MJExtensionConst.m in Sources */,
 				3A4C62A41D03C83100074DB8 /* MWCaptionView.m in Sources */,
 				3A4C62D41D03CEE800074DB8 /* QYHQiNiuRequestManarger.m in Sources */,
-				9C29077D1D488B1E00224D07 /* MJFoundation.m in Sources */,
 				9CEE2E601CF4345800807BDE /* QYHSetTableViewController.m in Sources */,
 				9C4A27621D460710004DA08F /* QYHChatViewCell.m in Sources */,
 				9CBE674F1D22116D000A785E /* QYHVerificationViewController.m in Sources */,

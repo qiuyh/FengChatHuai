@@ -27,43 +27,60 @@ PODS:
   - CocoaLumberjack/Default (3.1.0)
   - CocoaLumberjack/Extensions (3.1.0):
     - CocoaLumberjack/Default
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - HappyDNS (0.3.5)
   - KissXML (5.2.0)
   - MBProgressHUD (0.9.2)
   - MGSwipeTableCell (1.5.5)
+  - MJExtension (3.0.13)
   - MJRefresh (3.0.8)
+  - MOBFoundation_IDFA (2.2.17)
   - Qiniu (7.0.20):
     - AFNetworking (~> 2.0)
     - HappyDNS (~> 0.3)
+  - SDAutoLayout (2.1.7)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - SMSSDK (2.1.5):
+    - MOBFoundation_IDFA
   - XMPPFramework (3.7.0):
     - CocoaAsyncSocket (~> 7.6.0)
     - CocoaLumberjack
     - KissXML (~> 5.2.0)
 
 DEPENDENCIES:
+  - FMDB
   - MBProgressHUD (~> 0.9.2)
   - MGSwipeTableCell
+  - MJExtension
   - MJRefresh (~> 3.0.4)
   - Qiniu (~> 7.0.20)
+  - SDAutoLayout
   - SDWebImage (~> 3.7)
+  - SMSSDK
   - XMPPFramework (~> 3.7.0)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   CocoaAsyncSocket: b9d5589f07baf9de8f34cc25abd4fcba28f13805
   CocoaLumberjack: 8311463ddf9ee86a06ef92a071dd656c89244500
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HappyDNS: 6f8cf46fa7c0b98a6591fe8ecb2e08d9907a6e8b
   KissXML: 1c1eeeb6b94e4522cd2f2373e5d0d03c9227738f
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
+  MOBFoundation_IDFA: ce39a93c7163b2877615d3a6acd1276a6a0132e6
   Qiniu: 8958e70c02fb563c8c04d555bb5041441c5f4216
+  SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SMSSDK: 7d19654f9d36392988e96bf697afdac983808b1a
   XMPPFramework: 6f99ad1afcdb0cdbec7192a8e4c542c3fc3de6f8
 
-PODFILE CHECKSUM: d8a8be798bf6b2d17ffaa21c6e7ceb5b3ee023d1
+PODFILE CHECKSUM: d5826bc51186c50ad1a2c33c26a090eac93cd19b
 
 COCOAPODS: 1.2.0

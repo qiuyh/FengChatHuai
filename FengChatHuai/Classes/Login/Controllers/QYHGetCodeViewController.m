@@ -127,7 +127,8 @@
         
     }
     
-    [SMSSDK commitVerificationCode:self.acodeTextField.text phoneNumber:self.phoneNunberTextField.text zone:@"86" result:^(NSError *error) {
+    
+    [SMSSDK commitVerificationCode:self.acodeTextField.text phoneNumber:self.phoneNunberTextField.text zone:@"86" result:^(SMSSDKUserInfo *userInfo, NSError *error) {
         
         if (!error) {
             NSLog(@"验证成功");
