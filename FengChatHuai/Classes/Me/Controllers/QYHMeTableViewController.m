@@ -28,6 +28,10 @@
     [super viewDidLoad];
     
     
+    if (![[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
+        return;
+    }
+
     /**
      *  如果没有上传过头像就要上传
      */
@@ -79,6 +83,7 @@
     
 //    XMPPvCardTemp *myvCard =  [QYHXMPPTool sharedQYHXMPPTool].vCard.myvCardTemp;
     XMPPvCardTemp *myvCard = [[QYHXMPPvCardTemp shareInstance] vCard:nil];
+    NSLog(@"myvCard.photo==%@",myvCard.photo);
     NSData *data   = myvCard.photo ? myvCard.photo : UIImageJPEGRepresentation([UIImage imageNamed:@"placeholder"], 1.0);
     
     self.headImageVeiw.layer.cornerRadius = 5;

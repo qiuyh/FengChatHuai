@@ -327,12 +327,14 @@
 {
     
     if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
-        
-        [QYHXMPPvCardTemp shareInstance].vCard = [QYHXMPPTool sharedQYHXMPPTool].vCard.myvCardTemp;
-        
-        [[QYHXMPPvCardTemp shareInstance] setVCard:[QYHXMPPvCardTemp shareInstance] byUser:nil];
-        
         [_usersArray removeAllObjects];
+    }
+    
+    
+    XMPPvCardTemp *vCard =  [[QYHXMPPTool sharedQYHXMPPTool].vCard vCardTempForJID:[QYHXMPPTool sharedQYHXMPPTool].xmppStream.myJID shouldFetch:YES];
+    if (vCard) {
+        [QYHXMPPvCardTemp shareInstance].vCard = vCard;
+        [[QYHXMPPvCardTemp shareInstance] setVCard:[QYHXMPPvCardTemp shareInstance] byUser:nil];
     }
     
     

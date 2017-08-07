@@ -83,19 +83,28 @@
 
 - (void)logoutBtnClick{
     
-    //注销
-    [[QYHXMPPTool sharedQYHXMPPTool] xmppLogout];
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"退出后不会删除任何数据，下次登录依然可以使用本账号" preferredStyle:UIAlertControllerStyleActionSheet];
     
-    // 注销的时候，把沙盒的登录状态设置为NO
-    [QYHAccount shareAccount].login = NO;
-    [[QYHAccount shareAccount] saveToSandBox];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        //注销
+        [[QYHXMPPTool sharedQYHXMPPTool] xmppLogout];
+        
+        // 注销的时候，把沙盒的登录状态设置为NO
+        [QYHAccount shareAccount].login = NO;
+        [[QYHAccount shareAccount] saveToSandBox];
+        
+        [QYHContenViewController attemptDealloc];
+        [QYHDiscoverViewController attemptDealloc];
+        
+        //回登录的控制器
+        [UIStoryboard showInitialVCWithName:@"Login"];
+        
+    }]];
     
-    [QYHContenViewController attemptDealloc];
-    [QYHDiscoverViewController attemptDealloc];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     
-    //回登录的控制器
-    [UIStoryboard showInitialVCWithName:@"Login"];
-    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 
