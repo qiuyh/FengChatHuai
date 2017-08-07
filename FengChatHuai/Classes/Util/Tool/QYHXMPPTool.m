@@ -813,4 +813,19 @@ singleton_implementation(QYHXMPPTool)
 }
 
 
+/*
+ 
+ 强制启动openfire
+ 
+ sudo chmod -R 777 /usr/local/openfire/bin
+ sudo su
+ cd /usr/local/openfire/bin
+ export JAVA_HOME=`/usr/libexec/java_home`
+ echo $JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
+ cd /usr/local/openfire/bin
+ ./openfire.sh
+ 
+
+ */
+
 @end
