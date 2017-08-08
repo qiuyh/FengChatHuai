@@ -83,7 +83,7 @@
     
 //    XMPPvCardTemp *myvCard =  [QYHXMPPTool sharedQYHXMPPTool].vCard.myvCardTemp;
     XMPPvCardTemp *myvCard = [[QYHXMPPvCardTemp shareInstance] vCard:nil];
-    NSLog(@"myvCard.photo==%@",myvCard.photo);
+//    NSLog(@"myvCard.photo==%@",myvCard.photo);
     NSData *data   = myvCard.photo ? myvCard.photo : UIImageJPEGRepresentation([UIImage imageNamed:@"placeholder"], 1.0);
     
     self.headImageVeiw.layer.cornerRadius = 5;

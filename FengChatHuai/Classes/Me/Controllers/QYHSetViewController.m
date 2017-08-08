@@ -324,6 +324,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (indexPath.section) {
         
          UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -343,6 +345,9 @@
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             self.cell.detailTextLabel.text = [_provinceName stringByAppendingString:[NSString stringWithFormat:@" %@",cell.textLabel.text]];
         }else{
+            if (_imgView.hidden) {
+                return;
+            }
             self.cell.detailTextLabel.text = _label.text;
         }
         [self.cell layoutSubviews];
@@ -407,8 +412,6 @@
 //        }];
 
     }
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

@@ -479,7 +479,8 @@
 //发送信息
 - (void)sendDeleteMessage:(XMPPJID *)jid
 {
-    NSDictionary *bodyDic = @{@"type":@(SendDeleteFrien)};
+    NSDictionary *bodyDic = @{@"type":@(SendDeleteFrien),
+                              @"messegeID":[NSString acodeId]};
     //把bodyDic转换成data类型
     NSError *error = nil;
     

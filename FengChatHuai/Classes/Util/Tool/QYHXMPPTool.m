@@ -448,6 +448,7 @@ singleton_implementation(QYHXMPPTool)
     
 }
 
+
 #pragma mark 收到好友上下线状态
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence {
     //    DDLogVerbose(@"%@: %@ ^^^ %@", THIS_FILE, THIS_METHOD, [presence fromStr]);
@@ -460,6 +461,39 @@ singleton_implementation(QYHXMPPTool)
     NSString *presenceFromUser =[NSString stringWithFormat:@"%@", [[presence from] user]];
     NSLog(@"didReceivePresence_presenceType:%@",presenceType);
     NSLog(@"用户:%@",presenceFromUser);
+    
+    
+    //用户不在线就存起来，等上线再发
+    
+//     if ([presence.type isEqualToString:@"available"]) {
+//         
+//        NSString *key=[NSString stringWithFormat:@"%@%@sendMsg",[QYHAccount shareAccount].loginUser,[[presence from] user]];
+//         NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+//         NSString *filePath = [documentPath stringByAppendingPathComponent:key];
+//         //反归档
+//         NSMutableArray *msgArrM = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:filePath]];
+//        
+//        if (msgArrM) {
+//            for (NSXMLElement *msg in [msgArrM mutableCopy]) {
+//                if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
+//                    [[QYHXMPPTool sharedQYHXMPPTool].xmppStream sendElement:msg];
+//                    
+//                    [msgArrM removeObject:msg];
+//                }
+//            }
+//        }
+//         
+//         BOOL result = [NSKeyedArchiver archiveRootObject:msgArrM toFile:filePath];
+//         
+//         if (result) {
+//             NSLog(@"归档成功:%@",filePath);
+//         }else{
+//             NSLog(@"归档失败");
+//         }
+//
+//    }
+
+    
     
     
     //收到对方定阅我的消息
@@ -531,18 +565,75 @@ singleton_implementation(QYHXMPPTool)
 
 }
 
+/**
+ *  归档
+ */
+-(void)archiver:(NSMutableArray *)archiverArray user:(NSString *)user{
+    //获取文件路径
+    NSString *key=[NSString stringWithFormat:@"%@%@didReceiveMessage",[QYHAccount shareAccount].loginUser,user];
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:key];
+    BOOL result = [NSKeyedArchiver archiveRootObject:archiverArray toFile:filePath];
+    
+    if (result) {
+        NSLog(@"归档成功:%@",filePath);
+    }else{
+        NSLog(@"归档失败");
+    }
+    
+}
+
+/**
+ * 解档
+ */
+- (NSMutableArray *)unarchiverArr:(NSString *)user{
+    //获取文件路径
+    NSString *key=[NSString stringWithFormat:@"%@%@didReceiveMessage",[QYHAccount shareAccount].loginUser,user];
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:key];
+    //反归档
+    NSMutableArray *unarchiverArr = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:filePath]];
+    
+    NSLog(@"unarchiverArr = %@",unarchiverArr);
+    
+    return unarchiverArr;
+}
+
+
 #pragma mark-接收到信息
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
-
     NSLog(@"didReceiveMessage==%@",message);
     
     if ([message isMessageWithBody])
     {
+//        if ([message elementForName:@"delay"].stringValue) {
+//            return;
+//        }
+//        
         
         NSString * bodyStr = [message elementForName:@"body"].stringValue;
         NSData  * bodyData = [bodyStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:bodyData options:NSJSONReadingAllowFragments error:nil];
+        
+        
+        
+        NSMutableArray *arrM = [self unarchiverArr:[[message from] user]];
+        if (!arrM) {
+            arrM = [NSMutableArray array];
+        }else{
+            if (dic[@"messegeID"]) {
+                if ([arrM containsObject:dic[@"messegeID"]] && [message elementForName:@"delay"].stringValue) {
+                    return;
+                }
+            }
+        }
+        
+        if (dic[@"messegeID"]) {
+            [arrM addObject:dic[@"messegeID"]];
+        }
+        [self archiver:arrM user:[[message from] user]];
+        
         
         MySendContentType type = [dic[@"type"] integerValue];
         
@@ -778,7 +869,7 @@ singleton_implementation(QYHXMPPTool)
 -(void)applicationWillTerminate
 {
     UIApplication *app=[UIApplication sharedApplication];
-    UIBackgroundTaskIdentifier taskId;
+    UIBackgroundTaskIdentifier taskId = 0;
     
     taskId=[app beginBackgroundTaskWithExpirationHandler:^(void){
         [app endBackgroundTask:taskId];

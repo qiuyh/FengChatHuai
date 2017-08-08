@@ -27,6 +27,7 @@
 #import "XMPPvCardTemp.h"
 #import "QYHWebViewController.h"
 #import "QYHChatViewController.h"
+#import "QYHContactModel.h"
 
 ////枚举Cell类型
 //typedef enum : NSUInteger {
@@ -972,8 +973,70 @@ static QYHContenViewController *contenVC = nil;
     XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:self.friendJid];
     [msg addBody:bodyString];
 
-    [[QYHXMPPTool sharedQYHXMPPTool].xmppStream sendElement:msg];
+    if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected]) {
+        [[QYHXMPPTool sharedQYHXMPPTool].xmppStream sendElement:msg];
+    }
+    
+    
+//    for (QYHContactModel *user in [QYHChatDataStorage shareInstance].usersArray) {
+//        if ([user.jid.user isEqualToString:self.friendJid.user]) {
+//            
+//            if ([[QYHXMPPTool sharedQYHXMPPTool].xmppStream isConnected] && !user.sectionNum) {
+//                 [[QYHXMPPTool sharedQYHXMPPTool].xmppStream sendElement:msg];
+//            }else{
+//                //用户不在线就存起来，等上线再发
+//                NSMutableArray *msgArrM = [self unarchiverArr];
+//                
+//                if (!msgArrM) {
+//                    msgArrM = [NSMutableArray array];
+//                }
+//                
+//                [msgArrM addObject:msg];
+//                
+//                [self archiver:msgArrM];
+//            }
+//            
+//            break;
+//        }
+//    }
 }
+
+
+/**
+ *  归档
+ */
+-(void)archiver:(NSMutableArray *)archiverArray{
+    //获取文件路径
+    NSString *key=[NSString stringWithFormat:@"%@%@sendMsg",[QYHAccount shareAccount].loginUser,[self.friendJid.user mutableCopy]];
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:key];
+    BOOL result = [NSKeyedArchiver archiveRootObject:archiverArray toFile:filePath];
+    
+    if (result) {
+        NSLog(@"归档成功:%@",filePath);
+    }else{
+        NSLog(@"归档失败");
+    }
+    
+}
+
+/**
+ * 解档
+ */
+- (NSMutableArray *)unarchiverArr{
+    //获取文件路径
+    NSString *key=[NSString stringWithFormat:@"%@%@sendMsg",[QYHAccount shareAccount].loginUser,[self.friendJid.user mutableCopy]];
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:key];
+    //反归档
+    NSMutableArray *unarchiverArr = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:filePath]];
+    
+    NSLog(@"unarchiverArr = %@",unarchiverArr);
+    
+    return unarchiverArr;
+}
+
+
 
 //发送失败，重发
 //- (void)sendAgainMessage:(QYHChatMssegeModel *)messegeModel

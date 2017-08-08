@@ -231,6 +231,20 @@
 
 -(void)getThreePhotos{
     
+    NSString *key=[NSString stringWithFormat:@"%@%@personalThreePhotos",[QYHAccount shareAccount].loginUser,_phoneNumber];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [userDefaults objectForKey:key];
+    
+    NSArray *imageViewArray = @[self.imageView1,self.imageView2,self.imageView3];
+    
+    if (array) {
+        for (int i = 0; i < array.count; i++) {
+            [imageViewArray[i] sd_setImageWithURL:array[i]];
+        }
+    }
+ 
+    
      NSString *fileName = @"personalThreePhotos.json";
      __weak typeof(self) weakself = self;
     
@@ -241,13 +255,22 @@
             
             NSArray *array = [responseObject objectForKey:@"all"];
             
+            [userDefaults setObject:[array mutableCopy] forKey:key];
+            [userDefaults synchronize];
+            
             /**
              *  展示个人相册
              */
             
-            [weakself.imageView1 sd_setImageWithURL:array[0]];
-            [weakself.imageView2 sd_setImageWithURL:array[1]];
-            [weakself.imageView3 sd_setImageWithURL:array[2]];
+            if (array) {
+                for (int i = 0; i < array.count; i++) {
+                    [imageViewArray[i] sd_setImageWithURL:array[i]];
+                }
+            }
+            
+//            [weakself.imageView1 sd_setImageWithURL:array[0]];
+//            [weakself.imageView2 sd_setImageWithURL:array[1]];
+//            [weakself.imageView3 sd_setImageWithURL:array[2]];
             
         });
 
