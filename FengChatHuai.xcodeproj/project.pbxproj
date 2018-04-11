@@ -2792,7 +2792,7 @@
 				TargetAttributes = {
 					9C70DA9B1CED691C003ADB63 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9A8N83872W;
+						DevelopmentTeam = 7ACS3B4M75;
 						ProvisioningStyle = Automatic;
 					};
 					9C70DAB41CED691C003ADB63 = {
@@ -3705,7 +3705,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiahong Huang (QVTCZ7A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9A8N83872W;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7ACS3B4M75;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FengChatHuai/Others/SMS_SDK",
@@ -3720,7 +3721,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FengChatHuai/Others/QYHKeyBoard",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.huai.FengChatHuai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huai.FengChatHuai1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3737,7 +3738,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jiahong Huang (QVTCZ7A229)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9A8N83872W;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7ACS3B4M75;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FengChatHuai/Others/SMS_SDK",
@@ -3752,7 +3754,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FengChatHuai/Others/QYHKeyBoard",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.huai.FengChatHuai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huai.FengChatHuai1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

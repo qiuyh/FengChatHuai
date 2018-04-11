@@ -239,7 +239,8 @@ singleton_implementation(QYHXMPPTool)
 
 -(void)sendOnline{
     //XMPP框架，已经把所有的指令封闭成对象
-    XMPPPresence *presence = [XMPPPresence presence];
+//    XMPPPresence *presence = [XMPPPresence presence];
+    XMPPPresence *presence = [XMPPPresence presenceWithType:@"available"];
     NSLog(@"%@",presence);
     [_xmppStream sendElement:presence];
 
